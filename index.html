@@ -344,6 +344,8 @@
 
     .content-panel {
       position: relative;
+      grid-column: 1 / -1;
+      width: 100%;
       min-height: 225px;
       margin-top: 18px;
       padding: clamp(28px, 5vw, 50px);
@@ -465,26 +467,48 @@
         flex-direction: column;
       }
 
-      .tab-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .tab-card {
-        min-height: 128px;
-      }
-    }
-
-    @media (max-width: 430px) {
+      /*
+        On phones, the cards behave like an accordion. The active content panel
+        is moved directly below the card that was tapped.
+      */
       .tab-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
       }
 
       .tab-card {
         min-height: auto;
+        padding: 22px 24px;
       }
 
       .tab-number {
-        margin-bottom: 12px;
+        margin-bottom: 10px;
+      }
+
+      .content-panel {
+        min-height: 0;
+        margin: 0 0 4px;
+        padding: 26px 24px;
+        border-radius: 20px;
+        box-shadow: 0 12px 30px rgba(20, 35, 60, 0.07);
+      }
+
+      .content-panel::after {
+        top: -92px;
+        right: -92px;
+        width: 190px;
+        height: 190px;
+        border-width: 34px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .profile-frame {
+        width: 100%;
       }
     }
 
@@ -512,7 +536,7 @@
       <!-- EDIT HERE: Replace YOUR-LINKEDIN-ID with your LinkedIn public-profile name. -->
       <a
         class="header-link"
-        href="https://linkedin.com/in/ramachandran-venkatesh/"
+        href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID/"
         target="_blank"
         rel="noopener noreferrer"
       >LinkedIn</a>
@@ -535,7 +559,7 @@
 
         <p class="intro-copy">
           I lead digital commerce and technology transformation initiatives across regional markets.
-          Alongside my role, I am pursuing The NUS MBA part-time and actively
+          Alongside my role at L’Oréal Singapore, I am pursuing The NUS MBA part-time and actively
           contribute through volunteering in Singapore.
         </p>
 
@@ -545,7 +569,7 @@
           <!-- EDIT HERE: Replace YOUR-LINKEDIN-ID here as well. -->
           <a
             class="button button-secondary"
-            href="https://www.linkedin.com/in/ramachandran-venkatesh/"
+            href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID/"
             target="_blank"
             rel="noopener noreferrer"
           >Connect on LinkedIn</a>
@@ -654,8 +678,8 @@
         >
           <h3>Connecting business, technology and people.</h3>
           <p>
-            I lead digital commerce and Order Management System initiatives
-            across regional markets. My work brings together product strategy, program delivery,
+            At L’Oréal Singapore, I lead digital commerce and Order Management System initiatives
+            across regional markets. My work brings together product strategy, programme delivery,
             stakeholder alignment and cross-functional execution to turn complex challenges into
             practical and scalable outcomes.
           </p>
@@ -671,8 +695,8 @@
         >
           <h3>Learning beyond technology delivery.</h3>
           <p>
-            I am pursuing The NUS MBA on a part-time basis, with a focus on Strategy &amp; Organisation and
-            Digital Business. The journey is strengthening how I connect technology
+            I am pursuing The NUS MBA on a part-time basis, with a focus on Digital Business and
+            Strategy &amp; Organisation. The journey is strengthening how I connect technology
             leadership with business strategy, responsible decision-making and sustainable value creation.
           </p>
         </article>
@@ -739,6 +763,19 @@
   <script>
     const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
     const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+    const tabGrid = document.querySelector('.tab-grid');
+    const contentPanel = document.querySelector('.content-panel');
+    const mobileLayout = window.matchMedia('(max-width: 680px)');
+
+    function positionContentPanel(activeTab) {
+      if (mobileLayout.matches) {
+        // Mobile: place the content immediately after the selected card.
+        activeTab.insertAdjacentElement('afterend', contentPanel);
+      } else {
+        // Desktop/tablet: keep one shared content area below all cards.
+        tabGrid.insertAdjacentElement('afterend', contentPanel);
+      }
+    }
 
     function activateTab(tab, moveFocus = true) {
       tabs.forEach((item) => {
@@ -750,6 +787,8 @@
       panels.forEach((panel) => {
         panel.hidden = panel.id !== tab.getAttribute('aria-controls');
       });
+
+      positionContentPanel(tab);
 
       if (moveFocus) {
         tab.focus();
@@ -784,6 +823,14 @@
         }
       });
     });
+
+    function repositionForCurrentScreen() {
+      const activeTab = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
+      positionContentPanel(activeTab);
+    }
+
+    mobileLayout.addEventListener('change', repositionForCurrentScreen);
+    repositionForCurrentScreen();
 
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
