@@ -1,60 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Ram is a Product and Technology Leader, part-time NUS MBA candidate, and active volunteer based in Singapore."
+  />
+  <title>Ram | Product & Technology Leader</title>
 
-    <title>Ram | Profile</title>
+  <style>
+    :root {
+      --background: #f7f5f0;
+      --surface: #ffffff;
+      --surface-soft: #efede7;
+      --text: #172033;
+      --text-soft: #5e6675;
+      --navy: #14233c;
+      --accent: #ad713b;
+      --accent-soft: #ead9c9;
+      --border: #dedbd3;
+      --shadow: 0 22px 60px rgba(20, 35, 60, 0.10);
+      --radius-large: 28px;
+      --radius-medium: 18px;
+      --max-width: 1180px;
+    }
 
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            background: #111827;
-            color: white;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .container {
-            max-width: 700px;
-            padding: 40px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(173, 113, 59, 0.12), transparent 25rem),
+        radial-gradient(circle at 92% 0%, rgba(20, 35, 60, 0.09), transparent 28rem),
+        var(--background);
+      line-height: 1.6;
+    }
 
-        p {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #d1d5db;
-        }
+    a {
+      color: inherit;
+    }
 
-        .status {
-            margin-top: 30px;
-            font-size: 16px;
-            color: #9ca3af;
-        }
-    </style>
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .site-shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 84px;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      text-decoration: none;
+    }
+
+    .brand-dot {
+      color: var(--accent);
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--navy);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .header-link:hover,
+    .header-link:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: var(--surface);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      align-items: center;
+      gap: clamp(40px, 7vw, 90px);
+      padding: clamp(56px, 8vw, 96px) 0 62px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 30px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(3.1rem, 7.2vw, 6.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+    }
+
+    .role-line {
+      margin: 24px 0 0;
+      color: var(--accent);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 800;
+    }
+
+    .intro-copy {
+      max-width: 690px;
+      margin: 20px 0 0;
+      color: var(--text-soft);
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 12px 26px rgba(20, 35, 60, 0.18);
+    }
+
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      box-shadow: 0 16px 32px rgba(20, 35, 60, 0.24);
+    }
+
+    .button-secondary {
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--navy);
+    }
+
+    .profile-frame {
+      position: relative;
+      width: min(100%, 390px);
+      aspect-ratio: 4 / 5;
+      justify-self: end;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: var(--radius-large);
+      background:
+        linear-gradient(150deg, rgba(173, 113, 59, 0.85), rgba(20, 35, 60, 0.96));
+      box-shadow: var(--shadow);
+    }
+
+    .profile-frame::after {
+      position: absolute;
+      inset: auto 18px 18px auto;
+      z-index: 3;
+      width: 74px;
+      height: 74px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .profile-photo {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .photo-fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.94);
+      font-size: clamp(5rem, 15vw, 8rem);
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+
+    .profile-caption {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      left: 16px;
+      z-index: 4;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 14px;
+      background: rgba(20, 35, 60, 0.72);
+      color: white;
+      font-size: 0.88rem;
+      font-weight: 700;
+      backdrop-filter: blur(12px);
+    }
+
+    .journey-section {
+      padding: 30px 0 90px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .section-heading p {
+      max-width: 480px;
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    .tab-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .tab-card {
+      position: relative;
+      min-height: 148px;
+      padding: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-medium);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--navy);
+      text-align: left;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+    }
+
+    .tab-card:hover,
+    .tab-card:focus-visible {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      outline: none;
+      box-shadow: 0 15px 30px rgba(20, 35, 60, 0.08);
+    }
+
+    .tab-card[aria-selected="true"] {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 18px 34px rgba(20, 35, 60, 0.18);
+    }
+
+    .tab-number {
+      display: block;
+      margin-bottom: 26px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .tab-card[aria-selected="true"] .tab-number {
+      color: #e5b68a;
+    }
+
+    .tab-title {
+      display: block;
+      font-size: 0.98rem;
+      font-weight: 850;
+      line-height: 1.25;
+    }
+
+    .content-panel {
+      position: relative;
+      min-height: 225px;
+      margin-top: 18px;
+      padding: clamp(28px, 5vw, 50px);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+      background: var(--surface);
+      box-shadow: 0 18px 42px rgba(20, 35, 60, 0.07);
+    }
+
+    .content-panel::after {
+      position: absolute;
+      top: -70px;
+      right: -70px;
+      width: 220px;
+      height: 220px;
+      border: 44px solid var(--surface-soft);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .tab-content {
+      position: relative;
+      z-index: 2;
+      max-width: 810px;
+      animation: panel-in 260ms ease both;
+    }
+
+    .tab-content[hidden] {
+      display: none;
+    }
+
+    .tab-content h3 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      letter-spacing: -0.035em;
+    }
+
+    .tab-content p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+    }
+
+    .quote {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      border-top: 1px solid var(--border);
+      color: var(--text-soft);
+      font-size: 0.9rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    @keyframes panel-in {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 950px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-frame {
+        width: min(100%, 430px);
+        justify-self: start;
+      }
+
+      .tab-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .site-shell {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .site-header {
+        min-height: 72px;
+      }
+
+      .header-link:first-child {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 17vw, 5.3rem);
+      }
+
+      .section-heading,
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .tab-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .tab-card {
+        min-height: 128px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .tab-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tab-card {
+        min-height: auto;
+      }
+
+      .tab-number {
+        margin-bottom: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <main class="container">
-        <h1>Currently in the Forge 🔨</h1>
+  <header class="site-shell site-header">
+    <a class="brand" href="#top" aria-label="Ram homepage">Ram<span class="brand-dot">.</span></a>
 
-        <p>
-            My first webpage is taking shape. 
-            one idea, one line of code and one experiment at a time.
+    <nav class="header-links" aria-label="External links">
+      <!-- EDIT HERE: Replace YOUR-LINKEDIN-ID with your LinkedIn public-profile name. -->
+      <a
+        class="header-link"
+        href="https://linkedin.com/in/ramachandran-venkatesh/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn</a>
+
+      <a
+        class="header-link"
+        href="https://github.com/Ram-Forge"
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="site-shell hero" aria-labelledby="page-title">
+      <div>
+        <span class="eyebrow">Based in Singapore</span>
+        <h1 id="page-title">Hello, I’m Ram.</h1>
+        <p class="role-line">Product &amp; Technology Leader</p>
+
+        <p class="intro-copy">
+          I lead digital commerce and technology transformation initiatives across regional markets.
+          Alongside my role, I am pursuing The NUS MBA part-time and actively
+          contribute through volunteering in Singapore.
         </p>
 
-        <p class="status">
-            More coming soon.
-        </p>
-    </main>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#journey">Explore my journey</a>
+
+          <!-- EDIT HERE: Replace YOUR-LINKEDIN-ID here as well. -->
+          <a
+            class="button button-secondary"
+            href="https://www.linkedin.com/in/ramachandran-venkatesh/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Connect on LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="profile-frame">
+        <div class="photo-fallback" aria-hidden="true">R</div>
+
+        <!--
+          PHOTO:
+          Upload your photograph to the same folder as index.html.
+          Name it exactly: profile.jpg
+        -->
+        <img
+          class="profile-photo"
+          src="profile.jpg"
+          alt="Professional portrait of Ram"
+          onerror="this.style.display='none'"
+        />
+
+        <div class="profile-caption">Technology · Strategy · Community</div>
+      </div>
+    </section>
+
+    <section class="site-shell journey-section" id="journey" aria-labelledby="journey-heading">
+      <div class="section-heading">
+        <h2 id="journey-heading">Explore my journey</h2>
+        <p>Select a card to learn more about my work, learning, interests and values.</p>
+      </div>
+
+      <div class="tab-grid" role="tablist" aria-label="Ram's profile sections">
+        <button
+          class="tab-card"
+          id="tab-work"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-work"
+          tabindex="0"
+        >
+          <span class="tab-number">01</span>
+          <span class="tab-title">What I Do</span>
+        </button>
+
+        <button
+          class="tab-card"
+          id="tab-mba"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-mba"
+          tabindex="-1"
+        >
+          <span class="tab-number">02</span>
+          <span class="tab-title">My MBA Journey</span>
+        </button>
+
+        <button
+          class="tab-card"
+          id="tab-community"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-community"
+          tabindex="-1"
+        >
+          <span class="tab-number">03</span>
+          <span class="tab-title">Beyond Work</span>
+        </button>
+
+        <button
+          class="tab-card"
+          id="tab-inspiration"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-inspiration"
+          tabindex="-1"
+        >
+          <span class="tab-number">04</span>
+          <span class="tab-title">Areas That Inspire Me</span>
+        </button>
+
+        <button
+          class="tab-card"
+          id="tab-leadership"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-leadership"
+          tabindex="-1"
+        >
+          <span class="tab-number">05</span>
+          <span class="tab-title">My Leadership Philosophy</span>
+        </button>
+      </div>
+
+      <div class="content-panel">
+        <article
+          class="tab-content"
+          id="panel-work"
+          role="tabpanel"
+          aria-labelledby="tab-work"
+          tabindex="0"
+        >
+          <h3>Connecting business, technology and people.</h3>
+          <p>
+            I lead digital commerce and Order Management System initiatives
+            across regional markets. My work brings together product strategy, program delivery,
+            stakeholder alignment and cross-functional execution to turn complex challenges into
+            practical and scalable outcomes.
+          </p>
+        </article>
+
+        <article
+          class="tab-content"
+          id="panel-mba"
+          role="tabpanel"
+          aria-labelledby="tab-mba"
+          tabindex="0"
+          hidden
+        >
+          <h3>Learning beyond technology delivery.</h3>
+          <p>
+            I am pursuing The NUS MBA on a part-time basis, with a focus on Strategy &amp; Organisation and
+            Digital Business. The journey is strengthening how I connect technology
+            leadership with business strategy, responsible decision-making and sustainable value creation.
+          </p>
+        </article>
+
+        <article
+          class="tab-content"
+          id="panel-community"
+          role="tabpanel"
+          aria-labelledby="tab-community"
+          tabindex="0"
+          hidden
+        >
+          <h3>Contributing beyond my professional role.</h3>
+          <p>
+            I actively volunteer in Singapore and have supported community and national initiatives,
+            including National Day activities, Families for Life programmes and international sporting
+            events. These experiences reinforce my belief that leadership also means service,
+            responsibility and contributing to the wider community.
+          </p>
+        </article>
+
+        <article
+          class="tab-content"
+          id="panel-inspiration"
+          role="tabpanel"
+          aria-labelledby="tab-inspiration"
+          tabindex="0"
+          hidden
+        >
+          <h3>Curious about what comes next.</h3>
+          <p>
+            I am especially interested in digital transformation, artificial intelligence, responsible
+            innovation, sustainability, supply chain technology and leadership development. I am drawn
+            to ideas that combine commercial value with meaningful and responsible impact.
+          </p>
+        </article>
+
+        <article
+          class="tab-content"
+          id="panel-leadership"
+          role="tabpanel"
+          aria-labelledby="tab-leadership"
+          tabindex="0"
+          hidden
+        >
+          <span class="quote">“Do the right thing, the right way.”</span>
+          <p>
+            I believe effective leadership starts with clarity of intent, trust and accountability.
+            My goal is to create environments where people can collaborate openly, solve difficult
+            problems and deliver outcomes they are proud of.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="site-shell footer-row">
+      <span>© <span id="current-year"></span> Ram. All rights reserved.</span>
+      <span>Built with curiosity, one line at a time.</span>
+    </div>
+  </footer>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+    function activateTab(tab, moveFocus = true) {
+      tabs.forEach((item) => {
+        const isActive = item === tab;
+        item.setAttribute('aria-selected', String(isActive));
+        item.tabIndex = isActive ? 0 : -1;
+      });
+
+      panels.forEach((panel) => {
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      });
+
+      if (moveFocus) {
+        tab.focus();
+      }
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab, false));
+
+      tab.addEventListener('keydown', (event) => {
+        let targetIndex = null;
+
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+          targetIndex = (index + 1) % tabs.length;
+        }
+
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+          targetIndex = (index - 1 + tabs.length) % tabs.length;
+        }
+
+        if (event.key === 'Home') {
+          targetIndex = 0;
+        }
+
+        if (event.key === 'End') {
+          targetIndex = tabs.length - 1;
+        }
+
+        if (targetIndex !== null) {
+          event.preventDefault();
+          activateTab(tabs[targetIndex]);
+        }
+      });
+    });
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
