@@ -7,7 +7,9 @@
     name="description"
     content="Ram is a Product and Technology Leader, part-time NUS MBA candidate and active volunteer based in Singapore."
   />
-  <title>Ram | Product & Technology Leader</title>
+  <meta name="theme-color" content="#f7f5f0" />
+
+  <title>Ram | Product &amp; Technology Leader</title>
 
   <style>
     :root {
@@ -16,11 +18,13 @@
       --surface-soft: #efede7;
       --text: #172033;
       --text-soft: #5e6675;
-      --navy: #14233c;
+      --navy: #101d33;
+      --navy-soft: #182a48;
       --accent: #ad713b;
+      --accent-bright: #d79a62;
       --accent-soft: #ead9c9;
       --border: #dedbd3;
-      --shadow: 0 22px 60px rgba(20, 35, 60, 0.10);
+      --shadow: 0 22px 60px rgba(16, 29, 51, 0.11);
       --radius-large: 28px;
       --radius-medium: 18px;
       --max-width: 1180px;
@@ -37,11 +41,12 @@
     body {
       margin: 0;
       min-height: 100vh;
+      overflow-x: hidden;
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 8% 12%, rgba(173, 113, 59, 0.12), transparent 25rem),
-        radial-gradient(circle at 92% 0%, rgba(20, 35, 60, 0.09), transparent 28rem),
+        radial-gradient(circle at 8% 8%, rgba(173, 113, 59, 0.12), transparent 25rem),
+        radial-gradient(circle at 94% 0%, rgba(16, 29, 51, 0.09), transparent 30rem),
         var(--background);
       line-height: 1.6;
     }
@@ -55,6 +60,15 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     .site-shell {
       width: min(calc(100% - 40px), var(--max-width));
       margin: 0 auto;
@@ -64,14 +78,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 84px;
+      min-height: 82px;
       gap: 20px;
     }
 
     .brand {
       color: var(--navy);
       font-size: 1.35rem;
-      font-weight: 800;
+      font-weight: 850;
       letter-spacing: -0.04em;
       text-decoration: none;
     }
@@ -83,7 +97,7 @@
     .header-links {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .header-link {
@@ -91,13 +105,12 @@
       align-items: center;
       justify-content: center;
       min-height: 42px;
-      padding: 0 16px;
-      border: 1px solid var(--border);
+      padding: 0 15px;
+      border: 1px solid transparent;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.62);
       color: var(--navy);
-      font-size: 0.9rem;
-      font-weight: 700;
+      font-size: 0.88rem;
+      font-weight: 750;
       text-decoration: none;
       transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
     }
@@ -105,8 +118,14 @@
     .header-link:hover,
     .header-link:focus-visible {
       transform: translateY(-2px);
-      border-color: var(--accent);
-      background: var(--surface);
+      border-color: var(--border);
+      outline: none;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .header-link.external {
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.58);
     }
 
     .hero {
@@ -114,7 +133,7 @@
       grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
       align-items: center;
       gap: clamp(40px, 7vw, 90px);
-      padding: clamp(56px, 8vw, 96px) 0 62px;
+      padding: clamp(52px, 8vw, 94px) 0 82px;
     }
 
     .eyebrow {
@@ -124,7 +143,7 @@
       margin-bottom: 18px;
       color: var(--accent);
       font-size: 0.82rem;
-      font-weight: 800;
+      font-weight: 850;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
@@ -148,15 +167,42 @@
     .role-line {
       margin: 24px 0 0;
       color: var(--accent);
-      font-size: clamp(1.15rem, 2vw, 1.45rem);
-      font-weight: 800;
+      font-size: clamp(1.12rem, 2vw, 1.42rem);
+      font-weight: 850;
+    }
+
+    .hero-statement {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--navy);
+      font-size: clamp(1.45rem, 2.8vw, 2.25rem);
+      font-weight: 780;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
     }
 
     .intro-copy {
       max-width: 690px;
-      margin: 20px 0 0;
+      margin: 18px 0 0;
       color: var(--text-soft);
-      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      font-size: clamp(1rem, 1.6vw, 1.16rem);
+    }
+
+    .identity-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .identity-chip {
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.62);
+      color: var(--navy);
+      font-size: 0.84rem;
+      font-weight: 720;
     }
 
     .hero-actions {
@@ -182,22 +228,23 @@
     .button:hover,
     .button:focus-visible {
       transform: translateY(-2px);
+      outline: none;
     }
 
     .button-primary {
       background: var(--navy);
-      color: white;
-      box-shadow: 0 12px 26px rgba(20, 35, 60, 0.18);
+      color: #ffffff;
+      box-shadow: 0 12px 26px rgba(16, 29, 51, 0.18);
     }
 
     .button-primary:hover,
     .button-primary:focus-visible {
-      box-shadow: 0 16px 32px rgba(20, 35, 60, 0.24);
+      box-shadow: 0 16px 32px rgba(16, 29, 51, 0.24);
     }
 
     .button-secondary {
       border-color: var(--border);
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.72);
       color: var(--navy);
     }
 
@@ -209,18 +256,30 @@
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, 0.78);
       border-radius: var(--radius-large);
-      background:
-        linear-gradient(150deg, rgba(173, 113, 59, 0.85), rgba(20, 35, 60, 0.96));
+      background: linear-gradient(150deg, rgba(173, 113, 59, 0.9), rgba(16, 29, 51, 0.98));
       box-shadow: var(--shadow);
+    }
+
+    .profile-frame::before {
+      position: absolute;
+      top: -54px;
+      left: -40px;
+      z-index: 1;
+      width: 180px;
+      height: 180px;
+      border: 34px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+      content: "";
     }
 
     .profile-frame::after {
       position: absolute;
-      inset: auto 18px 18px auto;
+      right: 18px;
+      bottom: 18px;
       z-index: 3;
       width: 74px;
       height: 74px;
-      border: 1px solid rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.42);
       border-radius: 50%;
       content: "";
     }
@@ -252,37 +311,289 @@
       left: 16px;
       z-index: 4;
       padding: 14px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 14px;
-      background: rgba(20, 35, 60, 0.72);
-      color: white;
+      background: rgba(16, 29, 51, 0.74);
+      color: #ffffff;
       font-size: 0.88rem;
-      font-weight: 700;
+      font-weight: 720;
       backdrop-filter: blur(12px);
     }
 
-    .journey-section {
-      padding: 30px 0 90px;
+    .scope-section {
+      position: relative;
+      scroll-margin-top: 24px;
+      overflow: hidden;
+      padding: clamp(38px, 6vw, 72px) 0;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(65, 172, 223, 0.16), transparent 23rem),
+        linear-gradient(180deg, #edf8ff 0%, #f7fbfd 58%, var(--background) 100%);
     }
 
-    .section-heading {
+    .scope-section::before,
+    .scope-section::after {
+      position: absolute;
+      border: 1px solid rgba(54, 150, 197, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+      content: "";
+    }
+
+    .scope-section::before {
+      top: 12%;
+      left: 8%;
+      width: 120px;
+      height: 120px;
+    }
+
+    .scope-section::after {
+      right: 7%;
+      bottom: 8%;
+      width: 190px;
+      height: 190px;
+    }
+
+    .scope-shell {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+    }
+
+    .globe-stage {
+      position: relative;
+      width: min(100%, 600px);
+      aspect-ratio: 1 / 1;
+      min-height: 0;
+      overflow: hidden;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 50% 52%, rgba(255, 255, 255, 0.82) 0 44%, rgba(103, 190, 230, 0.12) 45% 58%, transparent 59%);
+      isolation: isolate;
+    }
+
+    .globe-stage::before {
+      position: absolute;
+      inset: 11%;
+      z-index: -1;
+      border-radius: 50%;
+      background: rgba(68, 175, 224, 0.17);
+      filter: blur(30px);
+      content: "";
+    }
+
+    #globeViz {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+      touch-action: pan-y;
+    }
+
+    #globeViz:active {
+      cursor: grabbing;
+    }
+
+    #globeViz canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+      outline: none;
+      touch-action: pan-y;
+    }
+
+    .globe-loader,
+    .globe-fallback {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      color: var(--navy);
+      text-align: center;
+    }
+
+    .globe-loader {
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .globe-loader::before {
+      width: 36px;
+      height: 36px;
+      margin: 0 auto 12px;
+      border: 2px solid rgba(16, 29, 51, 0.12);
+      border-top-color: #2c9fd4;
+      border-radius: 50%;
+      animation: spin 900ms linear infinite;
+      content: "";
+    }
+
+    .globe-fallback {
+      display: none;
+      border: 1px solid rgba(54, 150, 197, 0.18);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--text-soft);
+    }
+
+    .globe-fallback strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 1.12rem;
+    }
+
+    .globe-info {
+      position: absolute;
+      right: 50%;
+      bottom: 5%;
+      z-index: 10;
+      width: min(calc(100% - 56px), 340px);
+      padding: 14px 17px;
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 16px 38px rgba(19, 69, 96, 0.16);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(50%, 12px);
+      transition: opacity 180ms ease, transform 180ms ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .globe-info.is-visible {
+      opacity: 1;
+      transform: translate(50%, 0);
+    }
+
+    .globe-info-label {
+      display: block;
+      color: #2584ad;
+      font-size: 0.69rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .globe-info h3 {
+      margin: 3px 0 1px;
+      color: var(--navy);
+      font-size: 1.18rem;
+      line-height: 1.2;
+    }
+
+    .globe-info p {
+      margin: 0;
+      color: var(--text-soft);
+      font-size: 0.86rem;
+      font-weight: 650;
+    }
+
+    .globe-marker {
+      --marker-color: #ef3340;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 34px;
+      padding: 5px 10px 5px 6px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 8px 24px rgba(15, 55, 78, 0.2);
+      color: var(--navy);
+      font: 800 11px/1 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      white-space: nowrap;
+      pointer-events: auto;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .globe-marker:hover,
+    .globe-marker:focus-visible {
+      outline: none;
+      box-shadow: 0 11px 28px rgba(15, 55, 78, 0.28);
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    .globe-marker-core {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 21px;
+      height: 21px;
+      flex: 0 0 21px;
+      border: 3px solid var(--marker-color);
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(44, 159, 212, 0.18);
+    }
+
+    .globe-marker-core::after {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--marker-color);
+      content: "";
+    }
+
+    .globe-marker--singapore {
+      --marker-color: #ef3340;
+    }
+
+    .globe-marker--singapore .globe-marker-core {
+      box-shadow: 0 0 0 3px rgba(239, 51, 64, 0.2);
+    }
+
+    .globe-marker--chennai {
+      --marker-color: #f28c28;
+    }
+
+    .globe-marker--chennai .globe-marker-core {
+      box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.2);
+    }
+
+    .globe-marker--shanghai {
+      --marker-color: #149b89;
+    }
+
+    .globe-marker--shanghai .globe-marker-core {
+      box-shadow: 0 0 0 3px rgba(20, 155, 137, 0.2);
+    }
+
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .journey-section {
+      padding: clamp(70px, 9vw, 112px) 0 96px;
+    }
+
+    .journey-heading {
       display: flex;
       align-items: end;
       justify-content: space-between;
       gap: 30px;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
-    .section-heading h2 {
-      margin: 0;
+    .journey-heading h2 {
       color: var(--navy);
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
     }
 
-    .section-heading p {
-      max-width: 480px;
+    .journey-heading p {
+      max-width: 500px;
       margin: 0;
       color: var(--text-soft);
     }
@@ -295,12 +606,12 @@
 
     .tab-card {
       position: relative;
-      min-height: 148px;
+      min-height: 160px;
       padding: 20px;
       overflow: hidden;
       border: 1px solid var(--border);
       border-radius: var(--radius-medium);
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.72);
       color: var(--navy);
       text-align: left;
       cursor: pointer;
@@ -312,21 +623,21 @@
       transform: translateY(-4px);
       border-color: var(--accent);
       outline: none;
-      box-shadow: 0 15px 30px rgba(20, 35, 60, 0.08);
+      box-shadow: 0 15px 30px rgba(16, 29, 51, 0.08);
     }
 
     .tab-card[aria-selected="true"] {
       border-color: var(--navy);
       background: var(--navy);
-      color: white;
-      box-shadow: 0 18px 34px rgba(20, 35, 60, 0.18);
+      color: #ffffff;
+      box-shadow: 0 18px 34px rgba(16, 29, 51, 0.18);
     }
 
     .tab-number {
       display: block;
-      margin-bottom: 26px;
+      margin-bottom: 22px;
       color: var(--accent);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 900;
       letter-spacing: 0.12em;
     }
@@ -339,7 +650,19 @@
       display: block;
       font-size: 0.98rem;
       font-weight: 850;
-      line-height: 1.25;
+      line-height: 1.2;
+    }
+
+    .tab-subtitle {
+      display: block;
+      margin-top: 8px;
+      color: var(--text-soft);
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+
+    .tab-card[aria-selected="true"] .tab-subtitle {
+      color: rgba(255, 255, 255, 0.63);
     }
 
     .content-panel {
@@ -353,7 +676,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-large);
       background: var(--surface);
-      box-shadow: 0 18px 42px rgba(20, 35, 60, 0.07);
+      box-shadow: 0 18px 42px rgba(16, 29, 51, 0.07);
     }
 
     .content-panel::after {
@@ -370,7 +693,7 @@
     .tab-content {
       position: relative;
       z-index: 2;
-      max-width: 810px;
+      max-width: 820px;
       animation: panel-in 260ms ease both;
     }
 
@@ -401,7 +724,7 @@
     }
 
     footer {
-      padding: 26px 0 42px;
+      padding: 28px 0 42px;
       border-top: 1px solid var(--border);
       color: var(--text-soft);
       font-size: 0.9rem;
@@ -425,7 +748,13 @@
       }
     }
 
-    @media (max-width: 950px) {
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 980px) {
       .hero {
         grid-template-columns: 1fr;
       }
@@ -435,42 +764,60 @@
         justify-self: start;
       }
 
+
+      .globe-stage {
+        width: min(100%, 560px);
+      }
+
       .tab-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 760px) {
       .site-shell {
         width: min(calc(100% - 28px), var(--max-width));
       }
 
       .site-header {
-        min-height: 72px;
+        min-height: 70px;
       }
 
-      .header-link:first-child {
+      .header-link.internal {
         display: none;
       }
 
       .hero {
         padding-top: 42px;
+        padding-bottom: 68px;
       }
 
       h1 {
         font-size: clamp(3.2rem, 17vw, 5.3rem);
       }
 
-      .section-heading,
+      .scope-section {
+        padding: 70px 0;
+      }
+
+
+      .globe-stage {
+        width: min(100%, 500px);
+      }
+
+      .globe-marker {
+        min-height: 31px;
+        padding-right: 8px;
+        font-size: 10px;
+      }
+
+      .journey-heading,
       .footer-row {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      /*
-        On phones, the cards behave like an accordion. The active content panel
-        is moved directly below the card that was tapped.
-      */
+      /* Mobile accordion: active content is moved immediately below the tapped card. */
       .tab-grid {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -478,11 +825,15 @@
 
       .tab-card {
         min-height: auto;
-        padding: 22px 24px;
+        padding: 20px 22px;
       }
 
       .tab-number {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+      }
+
+      .tab-subtitle {
+        margin-top: 5px;
       }
 
       .content-panel {
@@ -490,7 +841,7 @@
         margin: 0 0 4px;
         padding: 26px 24px;
         border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(20, 35, 60, 0.07);
+        box-shadow: 0 12px 30px rgba(16, 29, 51, 0.07);
       }
 
       .content-panel::after {
@@ -502,13 +853,42 @@
       }
     }
 
-    @media (max-width: 430px) {
+    @media (max-width: 480px) {
+      .header-link.external:first-of-type {
+        display: none;
+      }
+
       .hero-actions .button {
         width: 100%;
       }
 
       .profile-frame {
         width: 100%;
+      }
+
+
+      .globe-stage {
+        width: 100%;
+      }
+
+      .globe-info {
+        bottom: 2%;
+        width: min(calc(100% - 34px), 320px);
+        padding: 12px 14px;
+      }
+
+      .globe-marker {
+        gap: 5px;
+        min-height: 29px;
+        padding: 4px 7px 4px 5px;
+        font-size: 9px;
+      }
+
+      .globe-marker-core {
+        width: 18px;
+        height: 18px;
+        flex-basis: 18px;
+        border-width: 2px;
       }
     }
 
@@ -532,17 +912,17 @@
   <header class="site-shell site-header">
     <a class="brand" href="#top" aria-label="Ram homepage">Ram<span class="brand-dot">.</span></a>
 
-    <nav class="header-links" aria-label="External links">
-      <!-- EDIT HERE: Replace YOUR-LINKEDIN-ID with your LinkedIn public-profile name. -->
+    <nav class="header-links" aria-label="Primary navigation">
+      <a class="header-link internal" href="#globe">Regional Scope</a>
+      <a class="header-link internal" href="#profile">Profile</a>
       <a
-        class="header-link"
+        class="header-link external"
         href="https://linkedin.com/in/ramachandran-venkatesh/"
         target="_blank"
         rel="noopener noreferrer"
       >LinkedIn</a>
-
       <a
-        class="header-link"
+        class="header-link external"
         href="https://github.com/Ram-Forge"
         target="_blank"
         rel="noopener noreferrer"
@@ -556,17 +936,22 @@
         <span class="eyebrow">Based in Singapore</span>
         <h1 id="page-title">Hello, I’m Ram.</h1>
         <p class="role-line">Product &amp; Technology Leader</p>
+        <p class="hero-statement">Connecting technology, strategy and people.</p>
 
         <p class="intro-copy">
           I lead digital commerce and technology transformation initiatives across regional markets.
-          Alongside my role, I am pursuing The NUS MBA part-time and actively
-          contribute through volunteering in Singapore.
+          Alongside my role, I am pursuing The NUS MBA part-time and actively contribute through
+          volunteering in Singapore.
         </p>
 
-        <div class="hero-actions">
-          <a class="button button-primary" href="#journey">Explore my journey</a>
+        <div class="identity-strip" aria-label="Profile highlights">
+          <span class="identity-chip">Regional Transformation</span>
+          <span class="identity-chip">The NUS MBA</span>
+          <span class="identity-chip">Community Contribution</span>
+        </div>
 
-          <!-- EDIT HERE: Replace YOUR-LINKEDIN-ID here as well. -->
+        <div class="hero-actions">
+          <a class="button button-primary" href="#globe">View regional scope</a>
           <a
             class="button button-secondary"
             href="https://linkedin.com/in/ramachandran-venkatesh/"
@@ -579,11 +964,7 @@
       <div class="profile-frame">
         <div class="photo-fallback" aria-hidden="true">R</div>
 
-        <!--
-          PHOTO:
-          Upload your photograph to the same folder as index.html.
-          Name it exactly: profile.jpg
-        -->
+        <!-- Upload your photograph beside index.html and name it exactly: profile.jpg -->
         <img
           class="profile-photo"
           src="profile.jpg"
@@ -591,14 +972,42 @@
           onerror="this.style.display='none'"
         />
 
-        <div class="profile-caption">Technology · Strategy · Community</div>
+        <div class="profile-caption">Technology · Strategy · Impact</div>
       </div>
     </section>
 
-    <section class="site-shell journey-section" id="journey" aria-labelledby="journey-heading">
-      <div class="section-heading">
-        <h2 id="journey-heading">Explore my journey</h2>
-        <p>Select a card to learn more about my work, learning, interests and values.</p>
+    <section class="scope-section" id="globe" aria-labelledby="scope-heading">
+      <h2 class="sr-only" id="scope-heading">Interactive globe showing Ram's regional scope</h2>
+
+      <div class="site-shell scope-shell">
+        <div class="globe-stage" id="globe-stage">
+          <div
+            id="globeViz"
+            aria-label="Interactive rotating globe highlighting Ram's current Asia-Pacific scope, hometown Chennai, Shanghai and home Singapore"
+          ></div>
+
+          <div class="globe-loader" id="globe-loader"><span>Preparing globe…</span></div>
+
+          <div class="globe-fallback" id="globe-fallback">
+            <div>
+              <strong>Interactive globe unavailable</strong>
+              Please refresh the page or check your internet connection.
+            </div>
+          </div>
+
+          <div class="globe-info" id="globe-info" role="status" aria-live="polite">
+            <span class="globe-info-label" id="globe-info-label"></span>
+            <h3 id="globe-info-name"></h3>
+            <p id="globe-info-description"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="site-shell journey-section" id="profile" aria-labelledby="journey-heading">
+      <div class="journey-heading">
+        <h2 id="journey-heading">Experience, learning &amp; values.</h2>
+        <p>Select a chapter to learn more about my work, MBA journey, interests and leadership approach.</p>
       </div>
 
       <div class="tab-grid" role="tablist" aria-label="Ram's profile sections">
@@ -613,6 +1022,7 @@
         >
           <span class="tab-number">01</span>
           <span class="tab-title">What I Do</span>
+          <span class="tab-subtitle">Technology, products and transformation</span>
         </button>
 
         <button
@@ -626,6 +1036,7 @@
         >
           <span class="tab-number">02</span>
           <span class="tab-title">My MBA Journey</span>
+          <span class="tab-subtitle">Strategy, leadership and continuous learning</span>
         </button>
 
         <button
@@ -639,6 +1050,7 @@
         >
           <span class="tab-number">03</span>
           <span class="tab-title">Beyond Work</span>
+          <span class="tab-subtitle">Service and community contribution</span>
         </button>
 
         <button
@@ -652,6 +1064,7 @@
         >
           <span class="tab-number">04</span>
           <span class="tab-title">Areas That Inspire Me</span>
+          <span class="tab-subtitle">Ideas shaping what comes next</span>
         </button>
 
         <button
@@ -665,6 +1078,7 @@
         >
           <span class="tab-number">05</span>
           <span class="tab-title">My Leadership Philosophy</span>
+          <span class="tab-subtitle">Trust, clarity and accountability</span>
         </button>
       </div>
 
@@ -678,10 +1092,9 @@
         >
           <h3>Connecting business, technology and people.</h3>
           <p>
-            I lead digital commerce and Order Management System initiatives
-            across regional markets. My work brings together product strategy, programme delivery,
-            stakeholder alignment and cross-functional execution to turn complex challenges into
-            practical and scalable outcomes.
+            I lead digital commerce and Order Management System initiatives across regional markets.
+            My work brings together product strategy, programme delivery, stakeholder alignment and
+            cross-functional execution to turn complex challenges into practical and scalable outcomes.
           </p>
         </article>
 
@@ -696,8 +1109,8 @@
           <h3>Learning beyond technology delivery.</h3>
           <p>
             I am pursuing The NUS MBA on a part-time basis, with a focus on Digital Business and
-            Strategy &amp; Organisation. The journey is strengthening how I connect technology
-            leadership with business strategy, responsible decision-making and sustainable value creation.
+            Strategy &amp; Organisation. The journey is strengthening how I connect technology leadership
+            with business strategy, responsible decision-making and sustainable value creation.
           </p>
         </article>
 
@@ -756,23 +1169,26 @@
   <footer>
     <div class="site-shell footer-row">
       <span>© <span id="current-year"></span> Ram. All rights reserved.</span>
-      <span>Built with curiosity, one line at a time.</span>
+      <span>Technology · Strategy · Impact</span>
     </div>
   </footer>
 
   <script>
+    /* -----------------------------------------------------------------------
+       PROFILE CARDS
+       Desktop/tablet: one shared content panel below all cards.
+       Mobile: the content panel moves directly below the card that was tapped.
+    ------------------------------------------------------------------------ */
     const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
     const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
     const tabGrid = document.querySelector('.tab-grid');
     const contentPanel = document.querySelector('.content-panel');
-    const mobileLayout = window.matchMedia('(max-width: 680px)');
+    const mobileLayout = window.matchMedia('(max-width: 760px)');
 
     function positionContentPanel(activeTab) {
       if (mobileLayout.matches) {
-        // Mobile: place the content immediately after the selected card.
         activeTab.insertAdjacentElement('afterend', contentPanel);
       } else {
-        // Desktop/tablet: keep one shared content area below all cards.
         tabGrid.insertAdjacentElement('afterend', contentPanel);
       }
     }
@@ -824,13 +1240,372 @@
       });
     });
 
-    function repositionForCurrentScreen() {
+    function repositionProfilePanel() {
       const activeTab = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
       positionContentPanel(activeTab);
     }
 
-    mobileLayout.addEventListener('change', repositionForCurrentScreen);
-    repositionForCurrentScreen();
+    if (typeof mobileLayout.addEventListener === 'function') {
+      mobileLayout.addEventListener('change', repositionProfilePanel);
+    } else {
+      mobileLayout.addListener(repositionProfilePanel);
+    }
+    repositionProfilePanel();
+
+    /* -----------------------------------------------------------------------
+       INTERACTIVE REGIONAL GLOBE
+       Scope countries are highlighted as clickable land areas. Chennai,
+       Shanghai and Singapore use larger, accessible city markers.
+    ------------------------------------------------------------------------ */
+    const scopeCountryIds = new Set([
+      '704', '764', '458', '702', '360', '608', '036', '554', '410', '392'
+    ]);
+
+    const cityMarkers = [
+      {
+        name: 'Singapore',
+        slug: 'singapore',
+        lat: 1.3521,
+        lng: 103.8198,
+        label: 'Home',
+        description: 'Home'
+      },
+      {
+        name: 'Chennai',
+        slug: 'chennai',
+        lat: 13.0827,
+        lng: 80.2707,
+        label: 'Hometown',
+        description: 'Hometown'
+      },
+      {
+        name: 'Shanghai',
+        slug: 'shanghai',
+        lat: 31.2304,
+        lng: 121.4737,
+        label: 'Home for 6 years',
+        description: 'Home for 6 years'
+      }
+    ];
+
+    const countryNameById = {
+      '704': 'Vietnam',
+      '764': 'Thailand',
+      '458': 'Malaysia',
+      '702': 'Singapore',
+      '360': 'Indonesia',
+      '608': 'Philippines',
+      '036': 'Australia',
+      '554': 'New Zealand',
+      '410': 'South Korea',
+      '392': 'Japan'
+    };
+
+    const countriesTopoJsonUrl =
+      'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json';
+
+    let globeInstance = null;
+    let globeHasLoaded = false;
+    let rotationResumeTimer = null;
+
+    const globeStage = document.getElementById('globe-stage');
+    const globeElement = document.getElementById('globeViz');
+    const globeLoader = document.getElementById('globe-loader');
+    const globeFallback = document.getElementById('globe-fallback');
+    const globeInfo = document.getElementById('globe-info');
+    const globeInfoLabel = document.getElementById('globe-info-label');
+    const globeInfoName = document.getElementById('globe-info-name');
+    const globeInfoDescription = document.getElementById('globe-info-description');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function countryId(feature) {
+      const rawId = feature?.id ?? '';
+      return String(rawId).padStart(3, '0');
+    }
+
+    function isScopeCountry(feature) {
+      return scopeCountryIds.has(countryId(feature));
+    }
+
+    function showGlobeInfo({ label, name, description }) {
+      globeInfoLabel.textContent = label;
+      globeInfoName.textContent = name;
+      globeInfoDescription.textContent = description;
+      globeInfo.classList.add('is-visible');
+    }
+
+    function showCityInfo(city) {
+      showGlobeInfo({
+        label: city.label,
+        name: city.name,
+        description: city.description
+      });
+    }
+
+    function showCountryInfo(feature) {
+      const id = countryId(feature);
+
+      if (!scopeCountryIds.has(id)) {
+        return;
+      }
+
+      if (id === '702') {
+        showCityInfo(cityMarkers[0]);
+        return;
+      }
+
+      showGlobeInfo({
+        label: 'Current regional scope',
+        name: countryNameById[id] || feature.properties?.name || 'Selected market',
+        description: 'Part of my current Asia-Pacific scope'
+      });
+    }
+
+    function pauseAndResumeRotation() {
+      if (!globeInstance || reducedMotion) {
+        return;
+      }
+
+      const controls = globeInstance.controls();
+      controls.autoRotate = false;
+      window.clearTimeout(rotationResumeTimer);
+      rotationResumeTimer = window.setTimeout(() => {
+        controls.autoRotate = true;
+      }, 6000);
+    }
+
+    function focusLocation(location) {
+      if (!globeInstance) {
+        return;
+      }
+
+      globeInstance.pointOfView(
+        { lat: location.lat, lng: location.lng, altitude: 1.7 },
+        reducedMotion ? 0 : 800
+      );
+      pauseAndResumeRotation();
+    }
+
+    function createCityMarker(city) {
+      const marker = document.createElement('button');
+      marker.type = 'button';
+      marker.className = `globe-marker globe-marker--${city.slug}`;
+      marker.setAttribute('aria-label', `${city.name}: ${city.description}`);
+      marker.title = `${city.name} — ${city.description}`;
+      marker.innerHTML = `
+        <span class="globe-marker-core" aria-hidden="true"></span>
+        <span>${city.name}</span>
+      `;
+
+      marker.addEventListener('click', (event) => {
+        event.stopPropagation();
+        showCityInfo(city);
+        focusLocation(city);
+      });
+
+      return marker;
+    }
+
+    function sizeGlobe() {
+      if (!globeInstance) {
+        return;
+      }
+
+      globeInstance.width(globeStage.clientWidth).height(globeStage.clientHeight);
+    }
+
+    function showGlobeFallback() {
+      globeLoader.style.display = 'none';
+      globeFallback.style.display = 'grid';
+    }
+
+    async function addCountryPolygons() {
+      try {
+        if (!window.topojson) {
+          throw new Error('TopoJSON conversion library is unavailable.');
+        }
+
+        const response = await fetch(countriesTopoJsonUrl, { mode: 'cors' });
+        if (!response.ok) {
+          throw new Error(`Country map request failed with status ${response.status}`);
+        }
+
+        const world = await response.json();
+        const countries = window.topojson.feature(world, world.objects.countries);
+        globeInstance.polygonsData(countries.features || []);
+      } catch (error) {
+        console.warn('Country boundaries could not be loaded.', error);
+      }
+    }
+
+    function initialiseGlobe() {
+      if (globeHasLoaded || !window.Globe) {
+        if (!window.Globe) {
+          showGlobeFallback();
+        }
+        return;
+      }
+
+      globeHasLoaded = true;
+
+      try {
+        globeInstance = new Globe(globeElement, {
+          rendererConfig: { antialias: true, alpha: true },
+          waitForGlobeReady: true,
+          animateIn: !reducedMotion
+        })
+          .width(globeStage.clientWidth)
+          .height(globeStage.clientHeight)
+          .backgroundColor('rgba(0,0,0,0)')
+          .showAtmosphere(true)
+          .atmosphereColor('#8bd7f5')
+          .atmosphereAltitude(0.13)
+          .showGraticules(false)
+          .polygonsData([])
+          .polygonAltitude((feature) => {
+            const id = countryId(feature);
+            if (id === '702') return 0.055;
+            return scopeCountryIds.has(id) ? 0.035 : 0.009;
+          })
+          .polygonCapColor((feature) => {
+            const id = countryId(feature);
+            if (id === '702') return '#ef3340';
+            return scopeCountryIds.has(id) ? '#36a7a0' : '#dce8e8';
+          })
+          .polygonSideColor((feature) => {
+            const id = countryId(feature);
+            if (id === '702') return 'rgba(171, 21, 39, 0.88)';
+            return scopeCountryIds.has(id)
+              ? 'rgba(25, 119, 116, 0.72)'
+              : 'rgba(139, 166, 170, 0.42)';
+          })
+          .polygonStrokeColor((feature) =>
+            isScopeCountry(feature) ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.58)'
+          )
+          .polygonLabel((feature) => {
+            const id = countryId(feature);
+            if (!scopeCountryIds.has(id)) return '';
+            const name = countryNameById[id] || feature.properties?.name || '';
+            const subtitle = id === '702' ? 'Home' : 'Current regional scope';
+            return `
+              <div style="padding:8px 10px;border:1px solid rgba(20,84,107,.14);border-radius:10px;background:rgba(255,255,255,.96);color:#101d33;font:800 12px/1.3 Inter,Segoe UI,sans-serif;box-shadow:0 10px 26px rgba(15,55,78,.18)">
+                ${name}<br><span style="color:#2a839f;font-weight:650">${subtitle}</span>
+              </div>
+            `;
+          })
+          .onPolygonClick((feature) => {
+            if (isScopeCountry(feature)) {
+              showCountryInfo(feature);
+              pauseAndResumeRotation();
+            }
+          })
+          .htmlElementsData(cityMarkers)
+          .htmlLat('lat')
+          .htmlLng('lng')
+          .htmlAltitude(0.075)
+          .htmlElement(createCityMarker)
+          .htmlTransitionDuration(reducedMotion ? 0 : 220)
+          .onGlobeReady(() => {
+            globeLoader.style.display = 'none';
+            const canvas = globeElement.querySelector('canvas');
+            if (canvas) {
+              canvas.setAttribute('role', 'img');
+              canvas.setAttribute(
+                'aria-label',
+                'Rotating globe highlighting ten current Asia-Pacific markets and the cities Chennai, Shanghai and Singapore'
+              );
+              canvas.tabIndex = 0;
+            }
+          });
+
+        const material = globeInstance.globeMaterial();
+        if (material?.color?.set) material.color.set('#4caee2');
+        if (material?.emissive?.set) material.emissive.set('#0d527b');
+        if ('emissiveIntensity' in material) material.emissiveIntensity = 0.17;
+        if ('shininess' in material) material.shininess = 22;
+
+        const controls = globeInstance.controls();
+        controls.autoRotate = !reducedMotion;
+        controls.autoRotateSpeed = 0.3;
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.08;
+        controls.enablePan = false;
+        controls.minDistance = 170;
+        controls.maxDistance = 430;
+
+        globeInstance.pointOfView({ lat: 8, lng: 112, altitude: 1.82 }, 0);
+
+        ['pointerdown', 'touchstart', 'wheel'].forEach((eventName) => {
+          globeElement.addEventListener(eventName, pauseAndResumeRotation, { passive: true });
+        });
+
+        if ('ResizeObserver' in window) {
+          const resizeObserver = new ResizeObserver(sizeGlobe);
+          resizeObserver.observe(globeStage);
+        } else {
+          window.addEventListener('resize', sizeGlobe);
+        }
+
+        addCountryPolygons();
+      } catch (error) {
+        console.error('The regional globe could not be initialised.', error);
+        showGlobeFallback();
+      }
+    }
+
+    function loadExternalScript(src, isReady) {
+      if (isReady()) {
+        return Promise.resolve();
+      }
+
+      return new Promise((resolve, reject) => {
+        const existing = document.querySelector(`script[src="${src}"]`);
+        if (existing) {
+          existing.addEventListener('load', resolve, { once: true });
+          existing.addEventListener('error', reject, { once: true });
+          return;
+        }
+
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+
+    async function loadGlobeLibrary() {
+      const globeScript =
+        'https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js';
+      const topoJsonScript =
+        'https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js';
+
+      const [globeResult] = await Promise.allSettled([
+        loadExternalScript(globeScript, () => Boolean(window.Globe)),
+        loadExternalScript(topoJsonScript, () => Boolean(window.topojson))
+      ]);
+
+      if (globeResult.status === 'rejected' || !window.Globe) {
+        showGlobeFallback();
+        return;
+      }
+
+      initialiseGlobe();
+    }
+
+    if ('IntersectionObserver' in window) {
+      const globeObserver = new IntersectionObserver((entries, observer) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          loadGlobeLibrary();
+          observer.disconnect();
+        }
+      }, { rootMargin: '300px 0px' });
+
+      globeObserver.observe(globeStage);
+    } else {
+      loadGlobeLibrary();
+    }
 
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
