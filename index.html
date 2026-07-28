@@ -7,1721 +7,1141 @@
     name="description"
     content="Ram is a Product and Technology Leader, part-time NUS MBA candidate and active volunteer based in Singapore."
   />
-  <meta name="theme-color" content="#f7f5f0" />
-
-  <title>Ram | Product &amp; Technology Leader</title>
+  <meta name="theme-color" content="#10213a" />
+  <title>Ram | Technology, Strategy &amp; Impact</title>
 
   <style>
     :root {
-      --background: #f7f5f0;
+      --bg: #f7f4ed;
+      --bg-soft: #fbfaf6;
       --surface: #ffffff;
-      --surface-soft: #efede7;
+      --surface-2: #f1eee7;
       --text: #172033;
-      --text-soft: #5e6675;
-      --navy: #101d33;
-      --navy-soft: #182a48;
-      --accent: #ad713b;
-      --accent-bright: #d79a62;
-      --accent-soft: #ead9c9;
-      --border: #dedbd3;
-      --shadow: 0 22px 60px rgba(16, 29, 51, 0.11);
-      --radius-large: 28px;
-      --radius-medium: 18px;
-      --max-width: 1180px;
+      --muted: #626b7a;
+      --navy: #10213a;
+      --navy-2: #193252;
+      --navy-3: #24456d;
+      --gold: #c58a47;
+      --gold-soft: #ecd4b5;
+      --teal: #1f9d8b;
+      --border: #ded9cf;
+      --border-dark: rgba(255,255,255,.16);
+      --shadow: 0 24px 70px rgba(16, 33, 58, .11);
+      --shadow-soft: 0 14px 34px rgba(16, 33, 58, .07);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 17px;
+      --max: 1220px;
+      --header-h: 76px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
     body {
       margin: 0;
       min-height: 100vh;
       overflow-x: hidden;
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 8% 8%, rgba(173, 113, 59, 0.12), transparent 25rem),
-        radial-gradient(circle at 94% 0%, rgba(16, 29, 51, 0.09), transparent 30rem),
-        var(--background);
+        radial-gradient(circle at 8% 7%, rgba(197,138,71,.13), transparent 25rem),
+        radial-gradient(circle at 92% 0%, rgba(67,112,158,.11), transparent 31rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-    }
+    img { display: block; max-width: 100%; }
+    button, input, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    [hidden] { display: none !important; }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .site-shell {
-      width: min(calc(100% - 40px), var(--max-width));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 82px;
-      gap: 20px;
-    }
-
-    .brand {
-      color: var(--navy);
-      font-size: 1.35rem;
-      font-weight: 850;
-      letter-spacing: -0.04em;
-      text-decoration: none;
-    }
-
-    .brand-dot {
-      color: var(--accent);
-    }
-
-    .header-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .header-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 0 15px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      color: var(--navy);
-      font-size: 0.88rem;
-      font-weight: 750;
-      text-decoration: none;
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-    }
-
-    .header-link:hover,
-    .header-link:focus-visible {
-      transform: translateY(-2px);
-      border-color: var(--border);
-      outline: none;
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .header-link.external {
-      border-color: var(--border);
-      background: rgba(255, 255, 255, 0.58);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-      align-items: center;
-      gap: clamp(40px, 7vw, 90px);
-      padding: clamp(52px, 8vw, 94px) 0 82px;
-    }
-
+    .shell { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .serif { font-family: Georgia, "Times New Roman", serif; }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 18px;
-      color: var(--accent);
-      font-size: 0.82rem;
+      color: var(--gold);
+      font-size: .78rem;
       font-weight: 850;
-      letter-spacing: 0.14em;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
+    .eyebrow::before { width: 27px; height: 2px; background: currentColor; content: ""; }
 
-    .eyebrow::before {
-      width: 30px;
-      height: 2px;
-      background: currentColor;
-      content: "";
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(222,217,207,.75);
+      background: rgba(247,244,237,.86);
+      backdrop-filter: blur(18px);
     }
-
-    h1 {
-      max-width: 780px;
-      margin: 0;
-      color: var(--navy);
-      font-size: clamp(3.1rem, 7.2vw, 6.7rem);
-      line-height: 0.95;
-      letter-spacing: -0.065em;
-    }
-
-    .role-line {
-      margin: 24px 0 0;
-      color: var(--accent);
-      font-size: clamp(1.12rem, 2vw, 1.42rem);
-      font-weight: 850;
-    }
-
-    .hero-statement {
-      max-width: 720px;
-      margin: 18px 0 0;
-      color: var(--navy);
-      font-size: clamp(1.45rem, 2.8vw, 2.25rem);
-      font-weight: 780;
-      line-height: 1.18;
-      letter-spacing: -0.035em;
-    }
-
-    .intro-copy {
-      max-width: 690px;
-      margin: 18px 0 0;
-      color: var(--text-soft);
-      font-size: clamp(1rem, 1.6vw, 1.16rem);
-    }
-
-    .identity-strip {
+    .header-inner {
       display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 24px;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--header-h);
+      gap: 22px;
     }
-
-    .identity-chip {
-      padding: 7px 12px;
-      border: 1px solid var(--border);
+    .brand {
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      text-decoration: none;
+    }
+    .brand span { color: var(--gold); }
+    .nav-wrap { display: flex; align-items: center; gap: 14px; }
+    .primary-nav { display: flex; align-items: center; gap: 4px; }
+    .primary-nav a {
+      padding: 9px 11px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.62);
       color: var(--navy);
-      font-size: 0.84rem;
+      font-size: .84rem;
       font-weight: 720;
+      text-decoration: none;
+      transition: background 170ms ease, color 170ms ease, transform 170ms ease;
     }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
+    .primary-nav a:hover, .primary-nav a:focus-visible {
+      background: rgba(255,255,255,.88);
+      outline: none;
+      transform: translateY(-1px);
     }
-
-    .button {
+    .header-action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 0 21px;
-      border: 1px solid transparent;
-      border-radius: 999px;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--navy);
+      border-radius: 8px;
+      background: var(--navy);
+      color: #fff;
+      font-size: .84rem;
       font-weight: 800;
       text-decoration: none;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
-
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .button-primary {
-      background: var(--navy);
-      color: #ffffff;
-      box-shadow: 0 12px 26px rgba(16, 29, 51, 0.18);
-    }
-
-    .button-primary:hover,
-    .button-primary:focus-visible {
-      box-shadow: 0 16px 32px rgba(16, 29, 51, 0.24);
-    }
-
-    .button-secondary {
-      border-color: var(--border);
-      background: rgba(255, 255, 255, 0.72);
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255,255,255,.76);
       color: var(--navy);
+      cursor: pointer;
     }
+    .menu-button svg { width: 22px; height: 22px; }
 
-    .profile-frame {
+    /* Hero */
+    .hero {
       position: relative;
-      width: min(100%, 390px);
-      aspect-ratio: 4 / 5;
-      justify-self: end;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.78);
-      border-radius: var(--radius-large);
-      background: linear-gradient(150deg, rgba(173, 113, 59, 0.9), rgba(16, 29, 51, 0.98));
-      box-shadow: var(--shadow);
-    }
-
-    .profile-frame::before {
-      position: absolute;
-      top: -54px;
-      left: -40px;
-      z-index: 1;
-      width: 180px;
-      height: 180px;
-      border: 34px solid rgba(255, 255, 255, 0.08);
-      border-radius: 50%;
-      content: "";
-    }
-
-    .profile-frame::after {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      z-index: 3;
-      width: 74px;
-      height: 74px;
-      border: 1px solid rgba(255, 255, 255, 0.42);
-      border-radius: 50%;
-      content: "";
-    }
-
-    .profile-photo {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .photo-fallback {
-      position: absolute;
-      inset: 0;
       display: grid;
-      place-items: center;
-      color: rgba(255, 255, 255, 0.94);
-      font-size: clamp(5rem, 15vw, 8rem);
-      font-weight: 900;
-      letter-spacing: -0.08em;
-    }
-
-    .profile-caption {
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      left: 16px;
-      z-index: 4;
-      padding: 14px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 14px;
-      background: rgba(16, 29, 51, 0.74);
-      color: #ffffff;
-      font-size: 0.88rem;
-      font-weight: 720;
-      backdrop-filter: blur(12px);
-    }
-
-    .scope-section {
-      position: relative;
-      scroll-margin-top: 24px;
-      padding: clamp(32px, 5vw, 58px) 0 76px;
-    }
-
-    .scope-shell {
-      display: grid;
-      place-items: center;
-    }
-
-    .globe-stage {
-      position: relative;
-      width: min(100%, 460px);
-      aspect-ratio: 1 / 1;
+      grid-template-columns: minmax(0, 1.03fr) minmax(380px, .97fr);
+      align-items: end;
+      min-height: 650px;
+      padding-top: clamp(55px, 7vw, 92px);
       overflow: hidden;
-      border: 1px solid rgba(44, 132, 176, 0.18);
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 48% 42%, rgba(255, 255, 255, 0.92) 0 24%, rgba(221, 244, 255, 0.72) 48%, rgba(161, 218, 244, 0.32) 72%, rgba(247, 245, 240, 0) 73%),
-        #eef9ff;
-      box-shadow: 0 24px 62px rgba(20, 83, 113, 0.12);
-      isolation: isolate;
     }
-
-    .globe-stage::before {
-      position: absolute;
-      inset: 8%;
-      z-index: -1;
-      border-radius: 50%;
-      background: rgba(72, 181, 230, 0.15);
-      filter: blur(28px);
-      content: "";
+    .hero-copy { position: relative; z-index: 3; padding: 0 0 66px; }
+    .hello { margin-bottom: 13px; color: var(--gold); font-size: 1.05rem; font-weight: 760; }
+    h1 {
+      max-width: 660px;
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 5.7vw, 5.7rem);
+      font-weight: 700;
+      line-height: .98;
+      letter-spacing: -.055em;
     }
-
-    .globe-preview {
-      position: absolute;
-      inset: 0;
-      z-index: 7;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border-radius: inherit;
-      background: linear-gradient(145deg, rgba(238, 249, 255, 0.96), rgba(255, 255, 255, 0.88));
-      transition: opacity 220ms ease, visibility 220ms ease;
+    h1 em { color: var(--gold); font-style: normal; }
+    .hero-intro {
+      max-width: 690px;
+      margin: 23px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.45vw, 1.13rem);
     }
-
-    .globe-preview-art {
-      width: 100%;
-      height: 100%;
-      transform: scale(1.02);
-    }
-
-    .globe-preview-button {
-      position: absolute;
-      right: 50%;
-      bottom: 11%;
-      z-index: 2;
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      min-height: 46px;
-      padding: 0 18px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      border-radius: 999px;
-      background: rgba(16, 29, 51, 0.92);
-      box-shadow: 0 14px 34px rgba(16, 29, 51, 0.22);
-      color: #ffffff;
-      font: 800 0.86rem/1 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 49px;
+      padding: 0 20px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-weight: 800;
+      text-decoration: none;
       cursor: pointer;
-      transform: translateX(50%);
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-      backdrop-filter: blur(10px);
+      transition: transform 170ms ease, box-shadow 170ms ease, background 170ms ease;
     }
+    .btn:hover, .btn:focus-visible { transform: translateY(-2px); outline: none; }
+    .btn-primary { background: var(--navy); color: #fff; box-shadow: 0 12px 26px rgba(16,33,58,.18); }
+    .btn-secondary { border-color: #aeb5bf; background: rgba(255,255,255,.7); color: var(--navy); }
+    .btn-small { min-height: 43px; padding-inline: 16px; font-size: .88rem; }
 
-    .globe-preview-button:hover,
-    .globe-preview-button:focus-visible {
-      outline: none;
-      background: var(--navy-soft);
-      box-shadow: 0 18px 38px rgba(16, 29, 51, 0.28);
-      transform: translateX(50%) translateY(-2px);
+    .hero-visual {
+      position: relative;
+      align-self: stretch;
+      min-height: 575px;
+      isolation: isolate;
     }
-
-    .globe-preview-button svg {
-      width: 18px;
-      height: 18px;
-      flex: 0 0 18px;
-    }
-
-    .globe-stage.is-loading .globe-preview,
-    .globe-stage.is-ready .globe-preview,
-    .globe-stage.has-error .globe-preview {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-    }
-
-    #globeViz {
+    .hero-visual::before {
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      cursor: grab;
-      pointer-events: none;
-      touch-action: pan-y;
-      transition: opacity 260ms ease;
-    }
-
-    .globe-stage.is-loading #globeViz,
-    .globe-stage.is-ready #globeViz {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .globe-stage.is-ready #globeViz {
-      pointer-events: auto;
-    }
-
-    #globeViz:active {
-      cursor: grabbing;
-    }
-
-    #globeViz canvas {
-      display: block;
-      width: 100% !important;
-      height: 100% !important;
-      outline: none;
-      touch-action: pan-y;
-    }
-
-    .globe-loader,
-    .globe-fallback {
-      position: absolute;
-      inset: 0;
-      z-index: 8;
-      place-items: center;
-      padding: 30px;
-      color: var(--navy);
-      text-align: center;
-    }
-
-    .globe-loader {
-      display: none;
-      font-size: 0.88rem;
-      font-weight: 750;
-      pointer-events: none;
-    }
-
-    .globe-stage.is-loading .globe-loader {
-      display: grid;
-    }
-
-    .globe-loader::before {
-      width: 36px;
-      height: 36px;
-      margin: 0 auto 12px;
-      border: 2px solid rgba(16, 29, 51, 0.12);
-      border-top-color: #2c9fd4;
-      border-radius: 50%;
-      animation: spin 900ms linear infinite;
+      right: -110px;
+      bottom: 0;
+      left: -120px;
+      z-index: -2;
+      height: 58%;
+      background: url("assets/singapore-skyline.svg") center bottom / cover no-repeat;
       content: "";
     }
-
-    .globe-fallback {
-      display: none;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.92);
-      color: var(--text-soft);
-    }
-
-    .globe-stage.has-error .globe-fallback {
-      display: grid;
-    }
-
-    .globe-fallback strong {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--navy);
-      font-size: 1.08rem;
-    }
-
-    .globe-info {
+    .hero-visual::after {
       position: absolute;
-      right: 50%;
-      bottom: 4%;
-      z-index: 10;
-      width: min(calc(100% - 48px), 310px);
+      inset: 5% -30% auto 0;
+      z-index: -3;
+      height: 70%;
+      background:
+        radial-gradient(circle at 55% 45%, rgba(197,138,71,.16), transparent 37%),
+        repeating-radial-gradient(ellipse at 62% 42%, transparent 0 48px, rgba(197,138,71,.12) 49px 50px, transparent 51px 72px);
+      opacity: .72;
+      content: "";
+    }
+    .portrait-wrap {
+      position: absolute;
+      right: 2%;
+      bottom: 0;
+      width: min(92%, 515px);
+      height: 560px;
+      overflow: hidden;
+      border-radius: 180px 180px 0 0;
+    }
+    .portrait-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .portrait-chip {
+      position: absolute;
+      right: 20px;
+      bottom: 24px;
       padding: 12px 15px;
-      border: 1px solid rgba(255, 255, 255, 0.82);
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: 0 14px 34px rgba(19, 69, 96, 0.16);
-      opacity: 0;
-      pointer-events: none;
-      transform: translate(50%, 10px);
-      transition: opacity 180ms ease, transform 180ms ease;
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 12px;
+      background: rgba(16,33,58,.76);
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 750;
       backdrop-filter: blur(12px);
     }
 
-    .globe-info.is-visible {
-      opacity: 1;
-      transform: translate(50%, 0);
-    }
-
-    .globe-info-label {
-      display: block;
-      color: #2584ad;
-      font-size: 0.66rem;
-      font-weight: 850;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .globe-info h3 {
-      margin: 3px 0 1px;
-      color: var(--navy);
-      font-size: 1.08rem;
-      line-height: 1.2;
-    }
-
-    .globe-info p {
-      margin: 0;
-      color: var(--text-soft);
-      font-size: 0.82rem;
-      font-weight: 650;
-    }
-
-    .globe-marker {
-      --marker-color: #ef3340;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      min-height: 31px;
-      padding: 4px 8px 4px 5px;
-      border: 1px solid rgba(255, 255, 255, 0.92);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 7px 20px rgba(15, 55, 78, 0.19);
-      color: var(--navy);
-      font: 800 10px/1 Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      white-space: nowrap;
-      pointer-events: auto;
-      cursor: pointer;
-      transform: translate(-50%, -50%);
-      transition: transform 160ms ease, box-shadow 160ms ease;
-    }
-
-    .globe-marker:hover,
-    .globe-marker:focus-visible {
-      outline: none;
-      box-shadow: 0 10px 26px rgba(15, 55, 78, 0.27);
-      transform: translate(-50%, -50%) scale(1.06);
-    }
-
-    .globe-marker-core {
+    .hero-stats {
       position: relative;
-      display: grid;
-      place-items: center;
-      width: 19px;
-      height: 19px;
-      flex: 0 0 19px;
-      border: 2px solid var(--marker-color);
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(44, 159, 212, 0.17);
-    }
-
-    .globe-marker-core::after {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--marker-color);
-      content: "";
-    }
-
-    .globe-marker--singapore {
-      --marker-color: #ef3340;
-    }
-
-    .globe-marker--singapore .globe-marker-core {
-      box-shadow: 0 0 0 3px rgba(239, 51, 64, 0.2);
-    }
-
-    .globe-marker--chennai {
-      --marker-color: #f28c28;
-    }
-
-    .globe-marker--chennai .globe-marker-core {
-      box-shadow: 0 0 0 3px rgba(242, 140, 40, 0.2);
-    }
-
-    .globe-marker--shanghai {
-      --marker-color: #149b89;
-    }
-
-    .globe-marker--shanghai .globe-marker-core {
-      box-shadow: 0 0 0 3px rgba(20, 155, 137, 0.2);
-    }
-
-    .sr-only {
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      padding: 0 !important;
-      margin: -1px !important;
-      overflow: hidden !important;
-      clip: rect(0, 0, 0, 0) !important;
-      white-space: nowrap !important;
-      border: 0 !important;
-    }
-
-    .journey-section {
-      padding: clamp(70px, 9vw, 112px) 0 96px;
-    }
-
-    .journey-heading {
+      z-index: 5;
+      grid-column: 1 / -1;
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 26px;
+      align-items: stretch;
+      width: fit-content;
+      max-width: 100%;
+      margin: -18px 0 40px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,.82);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(16px);
     }
-
-    .journey-heading h2 {
-      color: var(--navy);
-    }
-
-    .journey-heading p {
-      max-width: 500px;
-      margin: 0;
-      color: var(--text-soft);
-    }
-
-    .tab-grid {
+    .hero-stat { display: flex; align-items: center; gap: 13px; min-width: 205px; padding: 18px 22px; }
+    .hero-stat + .hero-stat { border-left: 1px solid var(--border); }
+    .stat-icon {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 12px;
+      flex: 0 0 auto;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      background: #f5eee3;
+      color: var(--gold);
     }
+    .stat-icon svg { width: 21px; height: 21px; }
+    .hero-stat strong { display: block; color: var(--navy); font-size: .9rem; line-height: 1.2; }
+    .hero-stat span { display: block; margin-top: 3px; color: var(--muted); font-size: .78rem; }
 
-    .tab-card {
+    /* Profile chapters */
+    .chapters-section { padding: 54px 0 92px; }
+    .section-title { text-align: center; }
+    .section-title h2 {
+      margin: 0;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 4vw, 3.8rem);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+    .section-title::after { display: block; width: 42px; height: 2px; margin: 16px auto 0; background: var(--gold); content: ""; }
+    .chapter-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; margin-top: 31px; }
+    .chapter-card {
       position: relative;
-      min-height: 160px;
-      padding: 20px;
+      min-height: 190px;
+      padding: 20px 18px;
       overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: var(--radius-medium);
-      background: rgba(255, 255, 255, 0.72);
+      border-radius: 12px;
+      background: rgba(255,255,255,.74);
       color: var(--navy);
       text-align: left;
       cursor: pointer;
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
     }
+    .chapter-card:hover, .chapter-card:focus-visible { transform: translateY(-4px); border-color: var(--gold); outline: none; box-shadow: var(--shadow-soft); }
+    .chapter-card[aria-selected="true"] { border-color: var(--navy); background: linear-gradient(145deg, var(--navy), var(--navy-2)); color: #fff; box-shadow: 0 20px 42px rgba(16,33,58,.19); }
+    .chapter-card[aria-selected="true"]::after { position: absolute; right: 20px; bottom: 11px; left: 20px; height: 3px; border-radius: 99px; background: var(--gold); content: ""; }
+    .card-top { display: flex; align-items: center; gap: 11px; margin-bottom: 18px; }
+    .chapter-icon { width: 29px; height: 29px; color: var(--gold); }
+    .chapter-number { color: var(--gold); font-size: .72rem; font-weight: 900; letter-spacing: .11em; }
+    .chapter-card[aria-selected="true"] .chapter-number { color: #f0c897; }
+    .chapter-title { display: block; font-size: 1.02rem; font-weight: 850; line-height: 1.2; }
+    .chapter-summary { display: block; margin-top: 10px; color: var(--muted); font-size: .77rem; line-height: 1.45; }
+    .chapter-card[aria-selected="true"] .chapter-summary { color: rgba(255,255,255,.68); }
 
-    .tab-card:hover,
-    .tab-card:focus-visible {
-      transform: translateY(-4px);
-      border-color: var(--accent);
-      outline: none;
-      box-shadow: 0 15px 30px rgba(16, 29, 51, 0.08);
-    }
-
-    .tab-card[aria-selected="true"] {
-      border-color: var(--navy);
-      background: var(--navy);
-      color: #ffffff;
-      box-shadow: 0 18px 34px rgba(16, 29, 51, 0.18);
-    }
-
-    .tab-number {
-      display: block;
-      margin-bottom: 22px;
-      color: var(--accent);
-      font-size: 0.76rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-    }
-
-    .tab-card[aria-selected="true"] .tab-number {
-      color: #e5b68a;
-    }
-
-    .tab-title {
-      display: block;
-      font-size: 0.98rem;
-      font-weight: 850;
-      line-height: 1.2;
-    }
-
-    .tab-subtitle {
-      display: block;
-      margin-top: 8px;
-      color: var(--text-soft);
-      font-size: 0.76rem;
-      line-height: 1.4;
-    }
-
-    .tab-card[aria-selected="true"] .tab-subtitle {
-      color: rgba(255, 255, 255, 0.63);
-    }
-
-    .content-panel {
-      position: relative;
-      grid-column: 1 / -1;
+    .chapter-panel-wrap {
       width: 100%;
-      min-height: 225px;
-      margin-top: 18px;
-      padding: clamp(28px, 5vw, 50px);
+      margin-top: 14px;
       overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: var(--radius-large);
-      background: var(--surface);
-      box-shadow: 0 18px 42px rgba(16, 29, 51, 0.07);
+      border-radius: 16px;
+      background: rgba(255,255,255,.9);
+      box-shadow: var(--shadow-soft);
     }
-
-    .content-panel::after {
-      position: absolute;
-      top: -70px;
-      right: -70px;
-      width: 220px;
-      height: 220px;
-      border: 44px solid var(--surface-soft);
-      border-radius: 50%;
-      content: "";
-    }
-
-    .tab-content {
-      position: relative;
-      z-index: 2;
-      max-width: 820px;
-      animation: panel-in 260ms ease both;
-    }
-
-    .tab-content[hidden] {
-      display: none;
-    }
-
-    .tab-content h3 {
-      margin: 0 0 14px;
+    .chapter-panel { animation: panel-in 250ms ease both; }
+    .chapter-layout { display: grid; grid-template-columns: 230px minmax(0,1fr); min-height: 500px; }
+    .chapter-sidebar { padding: 27px 20px; border-right: 1px solid var(--border); background: linear-gradient(180deg, #fbfaf6, #f6f2ea); }
+    .sidebar-heading { display: flex; align-items: center; gap: 10px; margin: 0 0 20px; color: var(--navy); font-size: .92rem; font-weight: 850; }
+    .sidebar-heading svg { width: 23px; height: 23px; color: var(--gold); }
+    .subnav { display: grid; gap: 7px; }
+    .subnav-button {
+      width: 100%;
+      padding: 10px 12px;
+      border: 0;
+      border-left: 2px solid transparent;
+      border-radius: 0 8px 8px 0;
+      background: transparent;
       color: var(--navy);
-      font-size: clamp(1.55rem, 3vw, 2.2rem);
-      letter-spacing: -0.035em;
+      font-size: .81rem;
+      text-align: left;
+      cursor: pointer;
     }
-
-    .tab-content p {
+    .subnav-button:hover, .subnav-button:focus-visible { outline: none; background: rgba(197,138,71,.08); }
+    .subnav-button[aria-selected="true"] { border-left-color: var(--gold); background: rgba(197,138,71,.09); font-weight: 800; }
+    .chapter-main { min-width: 0; padding: clamp(28px, 4vw, 48px); }
+    .subpanel { animation: panel-in 230ms ease both; }
+    .subpanel h3 {
       margin: 0;
-      color: var(--text-soft);
-      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.65rem, 3vw, 2.55rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
     }
+    .lead { max-width: 850px; margin: 12px 0 0; color: var(--muted); font-size: 1rem; }
 
-    .quote {
-      display: block;
-      margin-bottom: 12px;
-      color: var(--accent);
-      font-size: clamp(1.35rem, 3vw, 2rem);
-      font-weight: 900;
-      line-height: 1.2;
-    }
+    .theme-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 20px; margin-top: 28px; }
+    .theme-card { min-width: 0; }
+    .theme-card svg { width: 28px; height: 28px; color: var(--gold); }
+    .theme-card:nth-child(3) svg { color: #29a1a7; }
+    .theme-card h4 { margin: 10px 0 7px; color: var(--navy); font-size: .91rem; }
+    .theme-card ul { margin: 0; padding-left: 17px; color: var(--muted); font-size: .79rem; line-height: 1.55; }
 
-    footer {
-      padding: 28px 0 42px;
+    .feature-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 29px; }
+    .feature-card { overflow: hidden; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+    .feature-image { aspect-ratio: 16/9; overflow: hidden; background: var(--surface-2); }
+    .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 350ms ease; }
+    .feature-card:hover .feature-image img { transform: scale(1.025); }
+    .feature-copy { padding: 18px; }
+    .feature-copy h4 { margin: 0; color: var(--navy); font-size: .95rem; }
+    .feature-copy p { margin: 8px 0 0; color: var(--muted); font-size: .82rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+    .tag { padding: 4px 8px; border-radius: 999px; background: #f4eee4; color: #875d2c; font-size: .68rem; font-weight: 800; }
+
+    .pull-quote {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      margin-top: 27px;
+      padding-top: 22px;
       border-top: 1px solid var(--border);
-      color: var(--text-soft);
-      font-size: 0.9rem;
+      color: var(--navy);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      font-style: italic;
     }
+    .quote-mark { color: var(--gold); font-size: 3.8rem; font-style: normal; font-weight: 800; line-height: .72; }
 
-    .footer-row {
+    .pillars { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 28px; }
+    .pillar { padding: 20px; border: 1px solid var(--border); border-radius: 13px; background: #fff; }
+    .pillar span { color: var(--gold); font-size: .72rem; font-weight: 900; letter-spacing: .1em; }
+    .pillar h4 { margin: 8px 0 8px; color: var(--navy); font-size: .98rem; }
+    .pillar p { margin: 0; color: var(--muted); font-size: .82rem; }
+
+    .story-stack { display: grid; gap: 20px; margin-top: 28px; }
+    .story-card { display: grid; grid-template-columns: minmax(250px,.8fr) minmax(0,1.2fr); overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: #fff; }
+    .story-card:nth-child(even) .story-image { order: 2; }
+    .story-image { min-height: 260px; }
+    .story-image img { width: 100%; height: 100%; object-fit: cover; }
+    .story-copy { padding: 24px; }
+    .story-copy h4 { margin: 0; color: var(--navy); font-size: 1.08rem; }
+    .story-copy > p { margin: 8px 0 0; color: var(--muted); font-size: .84rem; }
+    .story-points { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px; margin-top: 17px; }
+    .story-point { padding: 11px; border-radius: 10px; background: #f8f5ef; }
+    .story-point strong { display: block; color: var(--gold); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; }
+    .story-point span { display: block; margin-top: 4px; color: var(--muted); font-size: .72rem; line-height: 1.4; }
+
+    .interest-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; margin-top: 28px; }
+    .interest-card { position: relative; min-height: 150px; padding: 21px; overflow: hidden; border: 1px solid var(--border); border-radius: 14px; background: linear-gradient(145deg,#fff,#f8f5ef); }
+    .interest-card::after { position: absolute; right: -20px; bottom: -28px; width: 95px; height: 95px; border: 20px solid rgba(197,138,71,.08); border-radius: 50%; content: ""; }
+    .interest-card h4 { margin: 0; color: var(--navy); font-size: .98rem; }
+    .interest-card p { margin: 8px 0 0; color: var(--muted); font-size: .79rem; }
+
+    .philosophy-hero { padding: 34px; border-radius: 18px; background: linear-gradient(145deg,var(--navy),var(--navy-2)); color: #fff; }
+    .philosophy-hero blockquote { max-width: 820px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem,4vw,4rem); line-height: 1.05; letter-spacing: -.035em; }
+    .philosophy-hero p { max-width: 720px; margin: 17px 0 0; color: rgba(255,255,255,.68); }
+
+    /* Regional footprint */
+    .scope-section { padding: 48px 0 88px; }
+    .scope-card {
+      display: grid;
+      grid-template-columns: minmax(260px,.68fr) minmax(0,1.32fr);
+      align-items: center;
+      gap: 35px;
+      padding: clamp(24px,4vw,45px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.77);
+      box-shadow: var(--shadow-soft);
+    }
+    .scope-copy h2 { margin: 9px 0 0; color: var(--navy); font-family: Georgia,"Times New Roman",serif; font-size: clamp(2rem,4vw,3.55rem); line-height: 1.02; letter-spacing: -.045em; }
+    .scope-copy p { margin: 15px 0 0; color: var(--muted); font-size: .93rem; }
+    .scope-copy .btn { margin-top: 22px; }
+    .globe-card { position: relative; min-width: 0; min-height: 385px; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; background: #fbfaf6; }
+    .globe-preview, .globe-live { position: absolute; inset: 0; }
+    .globe-preview img { width: 100%; height: 100%; object-fit: cover; }
+    .globe-live { display: none; }
+    #globeViz { position: absolute; inset: 0; cursor: grab; touch-action: pan-y; }
+    #globeViz:active { cursor: grabbing; }
+    #globeViz canvas { display: block; width: 100% !important; height: 100% !important; touch-action: pan-y; }
+    .globe-status {
+      position: absolute;
+      right: 13px;
+      bottom: 13px;
+      left: 13px;
+      z-index: 5;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 10px;
+      background: rgba(255,255,255,.86);
+      color: var(--navy);
+      font-size: .75rem;
+      box-shadow: 0 10px 28px rgba(16,33,58,.11);
+      backdrop-filter: blur(12px);
+    }
+    .globe-status strong { display: block; font-size: .79rem; }
+    .globe-status span { color: var(--muted); }
+    .globe-loader { position: absolute; inset: 0; z-index: 8; display: none; place-items: center; background: rgba(251,250,246,.9); color: var(--muted); font-size: .85rem; }
+    .globe-loader::before { width: 33px; height: 33px; margin: 0 auto 12px; border: 3px solid #d7e7ef; border-top-color: var(--teal); border-radius: 50%; animation: spin 900ms linear infinite; content: ""; }
+    .map-marker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 8px;
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 999px;
+      background: rgba(255,255,255,.93);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+      box-shadow: 0 7px 18px rgba(16,33,58,.22);
+      cursor: pointer;
+    }
+    .map-marker::before { width: 11px; height: 11px; border-radius: 50%; background: var(--marker); box-shadow: 0 0 0 3px rgba(16,33,58,.10); content: ""; }
+
+    /* Contact */
+    .contact-section { position: relative; overflow: hidden; padding: 48px 0 26px; background: linear-gradient(145deg,var(--navy),#142b4a); color: #fff; }
+    .contact-section::before { position: absolute; left: -130px; bottom: -130px; width: 420px; height: 420px; border: 1px solid rgba(197,138,71,.24); border-radius: 50%; box-shadow: 0 0 0 30px rgba(197,138,71,.04),0 0 0 60px rgba(197,138,71,.03); content: ""; }
+    .contact-grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 35px; }
+    .contact-copy h2 { margin: 0; color: #f2ba75; font-family: Georgia,"Times New Roman",serif; font-size: clamp(2rem,4vw,3.3rem); }
+    .contact-copy p { max-width: 650px; margin: 8px 0 0; color: rgba(255,255,255,.72); }
+    .contact-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+    .contact-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-width: 145px; min-height: 46px; padding: 0 17px; border: 1px solid rgba(255,255,255,.28); border-radius: 8px; color: #fff; font-size: .84rem; font-weight: 800; text-decoration: none; transition: background 170ms ease,transform 170ms ease; }
+    .contact-link:hover,.contact-link:focus-visible { transform: translateY(-2px); outline: none; background: rgba(255,255,255,.08); }
+    .contact-link svg { width: 18px; height: 18px; }
+    .footer-row { position: relative; z-index: 2; display: flex; justify-content: space-between; gap: 20px; margin-top: 34px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.52); font-size: .76rem; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 480ms ease, transform 480ms ease; }
+    .reveal.is-visible { opacity: 1; transform: none; }
+
+    @keyframes panel-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (max-width: 1040px) {
+      .primary-nav a:nth-child(4), .primary-nav a:nth-child(5) { display: none; }
+      .hero { grid-template-columns: minmax(0,1fr) minmax(330px,.8fr); }
+      .chapter-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .theme-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .story-points { grid-template-columns: 1fr; }
     }
 
-    @keyframes panel-in {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    @media (max-width: 980px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .profile-frame {
-        width: min(100%, 430px);
-        justify-self: start;
-      }
-
-
-      .globe-stage {
-        width: min(100%, 430px);
-      }
-
-      .tab-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 760px) {
-      .site-shell {
-        width: min(calc(100% - 28px), var(--max-width));
-      }
-
-      .site-header {
-        min-height: 70px;
-      }
-
-      .header-link.internal {
+    @media (max-width: 780px) {
+      :root { --header-h: 70px; }
+      .shell { width: min(calc(100% - 28px), var(--max)); }
+      .menu-button { display: grid; place-items: center; }
+      .header-action { display: none; }
+      .primary-nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 14px;
+        left: 14px;
         display: none;
-      }
-
-      .hero {
-        padding-top: 42px;
-        padding-bottom: 68px;
-      }
-
-      h1 {
-        font-size: clamp(3.2rem, 17vw, 5.3rem);
-      }
-
-      .scope-section {
-        padding: 30px 0 64px;
-      }
-
-      .globe-stage {
-        width: min(100%, 380px);
-      }
-
-      .globe-marker {
-        min-height: 31px;
-        padding-right: 8px;
-        font-size: 10px;
-      }
-
-      .journey-heading,
-      .footer-row {
-        align-items: flex-start;
+        align-items: stretch;
         flex-direction: column;
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: rgba(255,255,255,.96);
+        box-shadow: var(--shadow);
       }
-
-      /* Mobile accordion: active content is moved immediately below the tapped card. */
-      .tab-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .tab-card {
-        min-height: auto;
-        padding: 20px 22px;
-      }
-
-      .tab-number {
-        margin-bottom: 8px;
-      }
-
-      .tab-subtitle {
-        margin-top: 5px;
-      }
-
-      .content-panel {
-        min-height: 0;
-        margin: 0 0 4px;
-        padding: 26px 24px;
-        border-radius: 20px;
-        box-shadow: 0 12px 30px rgba(16, 29, 51, 0.07);
-      }
-
-      .content-panel::after {
-        top: -92px;
-        right: -92px;
-        width: 190px;
-        height: 190px;
-        border-width: 34px;
-      }
+      .primary-nav.is-open { display: flex; }
+      .primary-nav a, .primary-nav a:nth-child(4), .primary-nav a:nth-child(5) { display: block; padding: 11px 12px; }
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 45px; }
+      .hero-copy { padding-bottom: 22px; }
+      h1 { font-size: clamp(3rem,13vw,5rem); }
+      .hero-visual { min-height: 460px; }
+      .portrait-wrap { right: 50%; width: min(100%,420px); height: 450px; transform: translateX(50%); }
+      .hero-stats { width: 100%; margin-top: 18px; }
+      .hero-stat { min-width: 0; flex: 1; padding: 15px; }
+      .chapter-grid { grid-template-columns: 1fr; }
+      .chapter-card { min-height: auto; padding: 18px 20px; }
+      .card-top { margin-bottom: 8px; }
+      .chapter-summary { margin-top: 5px; }
+      .chapter-panel-wrap { margin: 0 0 5px; }
+      .chapter-layout { grid-template-columns: 1fr; }
+      .chapter-sidebar { padding: 18px; border-right: 0; border-bottom: 1px solid var(--border); }
+      .sidebar-heading { margin-bottom: 12px; }
+      .subnav { display: flex; overflow-x: auto; gap: 7px; padding-bottom: 2px; scrollbar-width: thin; }
+      .subnav-button { flex: 0 0 auto; width: auto; padding: 8px 11px; border: 1px solid var(--border); border-radius: 999px; background: #fff; white-space: nowrap; }
+      .subnav-button[aria-selected="true"] { border-color: var(--gold); background: #f7eee3; }
+      .chapter-main { padding: 25px 20px; }
+      .feature-grid,.pillars,.interest-grid { grid-template-columns: 1fr; }
+      .story-card { grid-template-columns: 1fr; }
+      .story-card:nth-child(even) .story-image { order: 0; }
+      .story-image { min-height: 220px; }
+      .scope-card { grid-template-columns: 1fr; }
+      .scope-copy { text-align: center; }
+      .scope-copy .eyebrow { justify-content: center; }
+      .scope-copy .btn { width: 100%; }
+      .globe-card { min-height: 360px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-actions { justify-content: flex-start; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
     }
 
-    @media (max-width: 480px) {
-      .header-link.external:first-of-type {
-        display: none;
-      }
-
-      .hero-actions .button {
-        width: 100%;
-      }
-
-      .profile-frame {
-        width: 100%;
-      }
-
-
-      .globe-stage {
-        width: min(100%, 330px);
-      }
-
-      .globe-info {
-        bottom: 2%;
-        width: min(calc(100% - 34px), 320px);
-        padding: 12px 14px;
-      }
-
-      .globe-marker {
-        gap: 5px;
-        min-height: 29px;
-        padding: 4px 7px 4px 5px;
-        font-size: 9px;
-      }
-
-      .globe-marker-core {
-        width: 18px;
-        height: 18px;
-        flex-basis: 18px;
-        border-width: 2px;
-      }
+    @media (max-width: 540px) {
+      .hero-actions .btn { width: 100%; }
+      .hero-visual { min-height: 400px; }
+      .portrait-wrap { height: 400px; }
+      .hero-stats { display: grid; grid-template-columns: 1fr; }
+      .hero-stat + .hero-stat { border-top: 1px solid var(--border); border-left: 0; }
+      .theme-grid { grid-template-columns: 1fr; }
+      .globe-card { min-height: 325px; }
+      .globe-status { align-items: flex-start; flex-direction: column; }
+      .contact-actions { display: grid; grid-template-columns: 1fr; width: 100%; }
+      .contact-link { width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
+      html { scroll-behavior: auto; }
+      *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
-
 <body>
-  <header class="site-shell site-header">
-    <a class="brand" href="#top" aria-label="Ram homepage">Ram<span class="brand-dot">.</span></a>
-
-    <nav class="header-links" aria-label="Primary navigation">
-      <a class="header-link internal" href="#profile">Profile</a>
-      <a class="header-link internal" href="#globe">Regional Footprint</a>
-      <a
-        class="header-link external"
-        href="https://linkedin.com/in/ramachandran-venkatesh/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >LinkedIn</a>
-      <a
-        class="header-link external"
-        href="https://github.com/Ram-Forge"
-        target="_blank"
-        rel="noopener noreferrer"
-      >GitHub</a>
-    </nav>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="#top" aria-label="Ram homepage">Ram<span>.</span></a>
+      <div class="nav-wrap">
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="#top">About</a>
+          <a href="#profile" data-open-chapter="work">Work</a>
+          <a href="#profile" data-open-chapter="mba">MBA</a>
+          <a href="#profile" data-open-chapter="community">Community</a>
+          <a href="#scope">Regional Footprint</a>
+          <a href="#contact">Connect</a>
+        </nav>
+        <a class="header-action" href="#profile">Explore my profile</a>
+        <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main id="top">
-    <section class="site-shell hero" aria-labelledby="page-title">
-      <div>
-        <span class="eyebrow">Based in Singapore</span>
-        <h1 id="page-title">Hello, I’m Ram.</h1>
-        <p class="role-line">Product &amp; Technology Leader</p>
-        <p class="hero-statement">Connecting technology, strategy and people.</p>
-
-        <p class="intro-copy">
-          I lead digital commerce and technology transformation initiatives across regional markets.
-          Alongside my role, I am pursuing The NUS MBA part-time and actively contribute through
-          volunteering in Singapore.
+    <section class="shell hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <div class="hello">Hello, I’m Ram.</div>
+        <h1 id="page-title">Connecting technology, strategy and <em>people.</em></h1>
+        <!-- EDIT: Update this introduction whenever your role or focus changes. -->
+        <p class="hero-intro">
+          I lead digital commerce and technology transformation initiatives across Asia-Pacific.
+          Alongside my professional role, I am pursuing The NUS MBA part-time and actively contribute through volunteering in Singapore.
         </p>
-
-        <div class="identity-strip" aria-label="Profile highlights">
-          <span class="identity-chip">Regional Transformation</span>
-          <span class="identity-chip">The NUS MBA</span>
-          <span class="identity-chip">Community Contribution</span>
-        </div>
-
         <div class="hero-actions">
-          <a class="button button-primary" href="#profile">Explore my profile</a>
-          <a class="button button-secondary" href="#globe">View regional footprint</a>
+          <a class="btn btn-primary" href="#profile">Explore my profile</a>
+          <a class="btn btn-secondary" href="#scope">View regional footprint</a>
         </div>
       </div>
 
-      <div class="profile-frame">
-        <div class="photo-fallback" aria-hidden="true">R</div>
+      <div class="hero-visual" aria-label="Professional portrait area">
+        <div class="portrait-wrap">
+          <!-- Upload profile.jpg beside index.html. The placeholder appears until then. -->
+          <img src="profile.jpg" alt="Professional portrait of Ram" onerror="this.onerror=null;this.src='assets/profile-placeholder.svg';" />
+          <div class="portrait-chip">Technology · Strategy · Impact</div>
+        </div>
+      </div>
 
-        <!-- Upload your photograph beside index.html and name it exactly: profile.jpg -->
-        <img
-          class="profile-photo"
-          src="profile.jpg"
-          alt="Professional portrait of Ram"
-          onerror="this.style.display='none'"
-        />
-
-        <div class="profile-caption">Technology · Strategy · Impact</div>
+      <div class="hero-stats" aria-label="Profile highlights">
+        <div class="hero-stat">
+          <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span>
+          <span><strong>15+ Years</strong><span>Technology and digital commerce</span></span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4.5 6 4.5 9S15 18 12 21M12 3c-3 3-4.5 6-4.5 9S9 18 12 21"/></svg></span>
+          <span><strong>Asia-Pacific</strong><span>Regional and cross-market scope</span></span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9 12 4l9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5M21 9v6"/></svg></span>
+          <span><strong>The NUS MBA</strong><span>Part-time MBA candidate</span></span>
+        </div>
       </div>
     </section>
 
-    <section class="site-shell journey-section" id="profile" aria-labelledby="journey-heading">
-      <div class="journey-heading">
-        <h2 id="journey-heading">Experience, learning &amp; values.</h2>
-        <p>Select a chapter to learn more about my work, MBA journey, interests and leadership approach.</p>
+    <section class="shell chapters-section reveal" id="profile" aria-labelledby="chapters-heading">
+      <div class="section-title">
+        <h2 id="chapters-heading">Experience, Learning and Values</h2>
       </div>
 
-      <div class="tab-grid" role="tablist" aria-label="Ram's profile sections">
-        <button
-          class="tab-card"
-          id="tab-work"
-          type="button"
-          role="tab"
-          aria-selected="true"
-          aria-controls="panel-work"
-          tabindex="0"
-        >
-          <span class="tab-number">01</span>
-          <span class="tab-title">What I Do</span>
-          <span class="tab-subtitle">Technology, products and transformation</span>
+      <div class="chapter-grid" id="chapter-grid" role="tablist" aria-label="Profile chapters">
+        <button class="chapter-card" id="tab-work" type="button" role="tab" aria-selected="false" aria-controls="panel-work" tabindex="-1" data-chapter="work">
+          <span class="card-top">
+            <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+            <span class="chapter-number">01</span>
+          </span>
+          <span class="chapter-title">What I Do</span>
+          <span class="chapter-summary">Technology, products, transformation and delivering business outcomes at scale.</span>
         </button>
 
-        <button
-          class="tab-card"
-          id="tab-mba"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-mba"
-          tabindex="-1"
-        >
-          <span class="tab-number">02</span>
-          <span class="tab-title">My MBA Journey</span>
-          <span class="tab-subtitle">Strategy, leadership and continuous learning</span>
+        <button class="chapter-card" id="tab-mba" type="button" role="tab" aria-selected="true" aria-controls="panel-mba" tabindex="0" data-chapter="mba">
+          <span class="card-top">
+            <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9 12 4l9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5M21 9v6"/></svg>
+            <span class="chapter-number">02</span>
+          </span>
+          <span class="chapter-title">My MBA Journey</span>
+          <span class="chapter-summary">Expanding my perspective in business, strategy and leadership.</span>
         </button>
 
-        <button
-          class="tab-card"
-          id="tab-community"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-community"
-          tabindex="-1"
-        >
-          <span class="tab-number">03</span>
-          <span class="tab-title">Beyond Work</span>
-          <span class="tab-subtitle">Service and community contribution</span>
+        <button class="chapter-card" id="tab-community" type="button" role="tab" aria-selected="false" aria-controls="panel-community" tabindex="-1" data-chapter="community">
+          <span class="card-top">
+            <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2.5"/><path d="M2 20c.5-4 2.7-6 6-6s5.5 2 6 6M14 13c3.7 0 6 2 6.5 6"/></svg>
+            <span class="chapter-number">03</span>
+          </span>
+          <span class="chapter-title">Beyond Work</span>
+          <span class="chapter-summary">Contributing to the community and supporting meaningful causes.</span>
         </button>
 
-        <button
-          class="tab-card"
-          id="tab-inspiration"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-inspiration"
-          tabindex="-1"
-        >
-          <span class="tab-number">04</span>
-          <span class="tab-title">Areas That Inspire Me</span>
-          <span class="tab-subtitle">Ideas shaping what comes next</span>
+        <button class="chapter-card" id="tab-inspiration" type="button" role="tab" aria-selected="false" aria-controls="panel-inspiration" tabindex="-1" data-chapter="inspiration">
+          <span class="card-top">
+            <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 22h4M8.5 14.5A7 7 0 1 1 16 14c-1 .8-1.5 1.7-1.5 3h-5c0-1.1-.4-1.8-1-2.5Z"/></svg>
+            <span class="chapter-number">04</span>
+          </span>
+          <span class="chapter-title">Areas That Inspire Me</span>
+          <span class="chapter-summary">Exploring ideas and topics shaping the future of business and technology.</span>
         </button>
 
-        <button
-          class="tab-card"
-          id="tab-leadership"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="panel-leadership"
-          tabindex="-1"
-        >
-          <span class="tab-number">05</span>
-          <span class="tab-title">My Leadership Philosophy</span>
-          <span class="tab-subtitle">Trust, clarity and accountability</span>
+        <button class="chapter-card" id="tab-leadership" type="button" role="tab" aria-selected="false" aria-controls="panel-leadership" tabindex="-1" data-chapter="leadership">
+          <span class="card-top">
+            <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 5-5 2.2 2.2-5 5-2.2Z"/></svg>
+            <span class="chapter-number">05</span>
+          </span>
+          <span class="chapter-title">My Leadership Philosophy</span>
+          <span class="chapter-summary">Guiding principles that shape how I lead and make decisions.</span>
         </button>
       </div>
 
-      <div class="content-panel">
-        <article
-          class="tab-content"
-          id="panel-work"
-          role="tabpanel"
-          aria-labelledby="tab-work"
-          tabindex="0"
-        >
-          <h3>Connecting business, technology and people.</h3>
-          <p>
-            I lead digital commerce and Order Management System initiatives across regional markets.
-            My work brings together product strategy, programme delivery, stakeholder alignment and
-            cross-functional execution to turn complex challenges into practical and scalable outcomes.
-          </p>
-        </article>
-
-        <article
-          class="tab-content"
-          id="panel-mba"
-          role="tabpanel"
-          aria-labelledby="tab-mba"
-          tabindex="0"
-          hidden
-        >
-          <h3>Learning beyond technology delivery.</h3>
-          <p>
-            I am pursuing The NUS MBA on a part-time basis, with a focus on Digital Business and
-            Strategy &amp; Organisation. The journey is strengthening how I connect technology leadership
-            with business strategy, responsible decision-making and sustainable value creation.
-          </p>
-        </article>
-
-        <article
-          class="tab-content"
-          id="panel-community"
-          role="tabpanel"
-          aria-labelledby="tab-community"
-          tabindex="0"
-          hidden
-        >
-          <h3>Contributing beyond my professional role.</h3>
-          <p>
-            I actively volunteer in Singapore and have supported community and national initiatives,
-            including National Day activities, Families for Life programmes and international sporting
-            events. These experiences reinforce my belief that leadership also means service,
-            responsibility and contributing to the wider community.
-          </p>
-        </article>
-
-        <article
-          class="tab-content"
-          id="panel-inspiration"
-          role="tabpanel"
-          aria-labelledby="tab-inspiration"
-          tabindex="0"
-          hidden
-        >
-          <h3>Curious about what comes next.</h3>
-          <p>
-            I am especially interested in digital transformation, artificial intelligence, responsible
-            innovation, sustainability, supply chain technology and leadership development. I am drawn
-            to ideas that combine commercial value with meaningful and responsible impact.
-          </p>
-        </article>
-
-        <article
-          class="tab-content"
-          id="panel-leadership"
-          role="tabpanel"
-          aria-labelledby="tab-leadership"
-          tabindex="0"
-          hidden
-        >
-          <span class="quote">“Do the right thing, the right way.”</span>
-          <p>
-            I believe effective leadership starts with clarity of intent, trust and accountability.
-            My goal is to create environments where people can collaborate openly, solve difficult
-            problems and deliver outcomes they are proud of.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="scope-section" id="globe" aria-labelledby="scope-heading">
-      <h2 class="sr-only" id="scope-heading">Interactive globe showing Ram's regional footprint</h2>
-
-      <div class="site-shell scope-shell">
-        <div class="globe-stage" id="globe-stage">
-          <div class="globe-preview" id="globe-preview">
-            <svg
-              class="globe-preview-art"
-              viewBox="0 0 460 460"
-              role="img"
-              aria-label="Preview of an interactive Asia-Pacific globe"
-            >
-              <defs>
-                <radialGradient id="preview-ocean" cx="38%" cy="30%" r="72%">
-                  <stop offset="0%" stop-color="#bfeaff" />
-                  <stop offset="64%" stop-color="#64bce8" />
-                  <stop offset="100%" stop-color="#2586bf" />
-                </radialGradient>
-                <clipPath id="preview-clip">
-                  <circle cx="230" cy="220" r="172" />
-                </clipPath>
-                <filter id="preview-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#145477" flood-opacity="0.22" />
-                </filter>
-              </defs>
-
-              <circle cx="230" cy="220" r="178" fill="#ffffff" opacity="0.86" />
-              <circle cx="230" cy="220" r="172" fill="url(#preview-ocean)" filter="url(#preview-shadow)" />
-
-              <g clip-path="url(#preview-clip)" fill="none" stroke="#d9f2ff" stroke-width="1.4" opacity="0.68">
-                <ellipse cx="230" cy="220" rx="145" ry="172" />
-                <ellipse cx="230" cy="220" rx="82" ry="172" />
-                <ellipse cx="230" cy="220" rx="28" ry="172" />
-                <ellipse cx="230" cy="220" rx="172" ry="126" />
-                <ellipse cx="230" cy="220" rx="172" ry="66" />
-                <path d="M58 220h344" />
-              </g>
-
-              <g clip-path="url(#preview-clip)" fill="#d9ece8" stroke="#ffffff" stroke-width="2.3" stroke-linejoin="round">
-                <path d="M122 116c24-23 62-27 91-11l20 12 11 22-17 13-11 29-33 6-16 28-20-7-9-27-26-15-9-27z" />
-                <path d="M239 118l38-13 36 12 29 28 5 31-24 14-17 24-26-5-10 18-25-8-11-31-21-24 13-25z" />
-                <path d="M282 238l32 3 26 20 1 36-23 31-33-5-14-29 5-30z" />
-                <path d="M355 274l34 10 16 26-8 24-35 7-22-19 3-28z" />
-                <path d="M325 174l18-7 12 11-4 17-16 5-10-12z" />
-                <path d="M299 189l14 4 5 22-10 18-13-8 2-21z" />
-              </g>
-
-              <g aria-hidden="true">
-                <circle cx="313" cy="228" r="9" fill="#ef3340" stroke="#ffffff" stroke-width="4" />
-                <circle cx="269" cy="192" r="8" fill="#36a7a0" stroke="#ffffff" stroke-width="4" />
-                <circle cx="332" cy="168" r="8" fill="#149b89" stroke="#ffffff" stroke-width="4" />
-                <circle cx="229" cy="216" r="8" fill="#f28c28" stroke="#ffffff" stroke-width="4" />
-                <circle cx="360" cy="292" r="8" fill="#36a7a0" stroke="#ffffff" stroke-width="4" />
-                <circle cx="390" cy="331" r="7" fill="#36a7a0" stroke="#ffffff" stroke-width="4" />
-              </g>
-            </svg>
-
-            <button class="globe-preview-button" id="load-globe-button" type="button">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
-                <path d="M3 12h18M12 3c2.7 2.5 4 5.5 4 9s-1.3 6.5-4 9c-2.7-2.5-4-5.5-4-9s1.3-6.5 4-9Z" fill="none" stroke="currentColor" stroke-width="1.6" />
-              </svg>
-              Explore interactive globe
-            </button>
-          </div>
-
-          <div
-            id="globeViz"
-            aria-label="Interactive rotating globe highlighting Ram's current Asia-Pacific scope, hometown Chennai, Shanghai and home Singapore"
-          ></div>
-
-          <div class="globe-loader" id="globe-loader"><span>Preparing globe…</span></div>
-
-          <div class="globe-fallback" id="globe-fallback">
-            <div>
-              <strong>Interactive globe unavailable</strong>
-              Please check your connection and refresh the page.
+      <div class="chapter-panel-wrap" id="chapter-panel-wrap">
+        <!-- WORK -->
+        <article class="chapter-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" hidden>
+          <div class="chapter-layout">
+            <aside class="chapter-sidebar">
+              <h3 class="sidebar-heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>What I Do</h3>
+              <div class="subnav" role="tablist" aria-label="Work details">
+                <button class="subnav-button" role="tab" aria-selected="true" data-subtarget="work-overview">Overview</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="work-capabilities">Capabilities</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="work-stories">Selected Stories</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="work-approach">How I Work</button>
+              </div>
+            </aside>
+            <div class="chapter-main">
+              <section class="subpanel" id="work-overview">
+                <h3>Connecting business, technology and people.</h3>
+                <p class="lead">I lead digital commerce and Order Management System initiatives across regional markets, bringing together product direction, program delivery, stakeholder alignment and cross-functional execution.</p>
+                <div class="pillars">
+                  <div class="pillar"><span>01</span><h4>Product &amp; Platform Leadership</h4><p>Shape priorities, roadmaps and scalable platform outcomes around real business needs.</p></div>
+                  <div class="pillar"><span>02</span><h4>Regional Program Delivery</h4><p>Coordinate complex initiatives across markets, functions, partners and technology teams.</p></div>
+                  <div class="pillar"><span>03</span><h4>Business–Technology Alignment</h4><p>Translate ambiguity into clear decisions, practical plans and measurable progress.</p></div>
+                </div>
+              </section>
+              <section class="subpanel" id="work-capabilities" hidden>
+                <h3>Core capabilities.</h3>
+                <p class="lead">These are the areas where I most often bring structure, alignment and momentum to complex transformation work.</p>
+                <div class="theme-grid">
+                  <div class="theme-card"><h4>Digital Commerce</h4><ul><li>B2B and D2C journeys</li><li>Supply Chain</li><li>Consumer and Objective focused</li></ul></div>
+                  <div class="theme-card"><h4>Product Leadership</h4><ul><li>Vision and roadmaps</li><li>Backlog and prioritisation</li><li>Value-based decisions</li></ul></div>
+                  <div class="theme-card"><h4>Program Leadership</h4><ul><li>Multi-market delivery</li><li>Governance and dependencies</li><li>Risk and issue management</li></ul></div>
+                  <div class="theme-card"><h4>Stakeholder Leadership</h4><ul><li>Executive alignment</li><li>Cross-functional facilitation</li><li>Vendor partnerships</li></ul></div>
+                </div>
+              </section>
+              <section class="subpanel" id="work-stories" hidden>
+                <h3>Selected professional stories.</h3>
+                <p class="lead">To be built</p>
+                <div class="feature-grid">
+                  <article class="feature-card"><div class="feature-image"><img loading="lazy" src="assets/work-platform.jpg" onerror="this.onerror=null;this.src='assets/work-platform.svg';" alt="Illustration representing product and platform leadership" /></div><div class="feature-copy"><h4>Modernising a Core Commerce Platform</h4><p><strong>Challenge:</strong> simplify complex processes while supporting scale across markets.<br><strong>My role:</strong> align stakeholders, shape the roadmap and drive delivery.<br><strong>Outcome:</strong> replace this with an approved, non-confidential result.</p><div class="tag-row"><span class="tag">Product</span><span class="tag">Transformation</span><span class="tag">Delivery</span></div></div></article>
+                  <article class="feature-card"><div class="feature-image"><img loading="lazy" src="assets/work-regional.jpg" onerror="this.onerror=null;this.src='assets/work-regional.svg';" alt="Illustration representing regional transformation" /></div><div class="feature-copy"><h4>Leading Across Regional Markets</h4><p><strong>Challenge:</strong> balance common direction with different local priorities.<br><strong>My role:</strong> create clarity, manage dependencies and support decisions.<br><strong>Learning:</strong> regional consistency works best when local context is respected.</p><div class="tag-row"><span class="tag">Regional</span><span class="tag">Stakeholders</span><span class="tag">Scale</span></div></div></article>
+                </div>
+              </section>
+              <section class="subpanel" id="work-approach" hidden>
+                <h3>How I work.</h3>
+                <p class="lead">I bring a calm, structured and people-oriented approach to transformation especially when priorities compete and the path is not yet clear.</p>
+                <div class="pillars">
+                  <div class="pillar"><span>UNDERSTAND</span><h4>Start with the decision</h4><p>Clarify the problem, intended outcome, constraints and stakeholder expectations.</p></div>
+                  <div class="pillar"><span>ALIGN</span><h4>Create shared direction</h4><p>Make trade-offs visible and help teams agree on what matters most.</p></div>
+                  <div class="pillar"><span>DELIVER</span><h4>Build momentum</h4><p>Turn the direction into practical actions, ownership and transparent progress.</p></div>
+                </div>
+              </section>
             </div>
           </div>
+        </article>
 
-          <div class="globe-info" id="globe-info" role="status" aria-live="polite">
-            <span class="globe-info-label" id="globe-info-label"></span>
-            <h3 id="globe-info-name"></h3>
-            <p id="globe-info-description"></p>
+        <!-- MBA -->
+        <article class="chapter-panel" id="panel-mba" role="tabpanel" aria-labelledby="tab-mba">
+          <div class="chapter-layout">
+            <aside class="chapter-sidebar">
+              <h3 class="sidebar-heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9 12 4l9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5M21 9v6"/></svg>My MBA Journey</h3>
+              <div class="subnav" role="tablist" aria-label="MBA details">
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="mba-overview">Overview</button>
+                <button class="subnav-button" role="tab" aria-selected="true" data-subtarget="mba-learning">Learning Themes</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="mba-global">Global Experiences</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="mba-beyond">Beyond the Classroom</button>
+              </div>
+            </aside>
+            <div class="chapter-main">
+              <section class="subpanel" id="mba-overview" hidden>
+                <h3>Learning beyond technology delivery.</h3>
+                <p class="lead">The NUS MBA is helping me strengthen the connection between technology execution, business strategy, leadership and sustainable value creation.</p>
+                <div class="pillars">
+                  <div class="pillar"><span>PERSPECTIVE</span><h4>Think across functions</h4><p>Evaluate decisions through strategic, financial, operational and organisational lenses.</p></div>
+                  <div class="pillar"><span>LEADERSHIP</span><h4>Influence with intention</h4><p>Understand stakeholder dynamics, organizational behaviour and the human side of change.</p></div>
+                  <div class="pillar"><span>APPLICATION</span><h4>Bring learning to work</h4><p>Apply frameworks to real programs, decisions and leadership challenges.</p></div>
+                </div>
+              </section>
+              <section class="subpanel" id="mba-learning">
+                <h3>Learning Themes</h3>
+                <p class="lead">The MBA is broadening my perspective beyond technology, strengthening business acumen and helping me grow as a more holistic leader.</p>
+                <!-- EDIT: Review the module names and completion status before publishing. -->
+                <div class="theme-grid">
+                  <div class="theme-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2.5"/><path d="M2 20c.5-4 2.7-6 6-6s5.5 2 6 6M14 13c3.7 0 6 2 6.5 6"/></svg><h4>Strategy &amp; Leadership</h4><ul><li>Leading with Impact</li><li>Stakeholder Management</li><li>Persuasion, Power &amp; Politics</li><li>Strategy and organisational leadership</li></ul></div>
+                  <div class="theme-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3M2 21h21"/></svg><h4>Business &amp; Decision Making</h4><ul><li>Managerial Economics</li><li>Financial Management</li><li>Operations &amp; Analytics</li><li>Contract Law for Managers</li></ul></div>
+                  <div class="theme-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v4M15 1v4M9 19v4M15 19v4M1 9h4M1 15h4M19 9h4M19 15h4M9 9h6v6H9z"/></svg><h4>Technology &amp; the Future</h4><ul><li>Digital Business</li><li>Artificial Intelligence</li><li>Responsible Innovation</li><li>Sustainability Strategy</li><li>Geopolitics in INternation Business</li></ul></div>
+                  <div class="theme-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v4M5 5l3 3M2 12h4M5 19l3-3M12 22v-4M19 19l-3-3M22 12h-4M19 5l-3 3"/><circle cx="12" cy="12" r="4"/></svg><h4>Personal Growth</h4><ul><li>Critical thinking</li><li>Communication</li><li>Leading people</li><li>Self-awareness</li></ul></div>
+                </div>
+                <div class="pull-quote"><span class="quote-mark">“</span><span>The MBA journey is not just about learning new frameworks; it is about transforming the way I think and lead.</span></div>
+              </section>
+              <section class="subpanel" id="mba-global" hidden>
+                <h3>Global learning experiences.</h3>
+                <p class="lead">International programmes have added new perspectives on innovation ecosystems, influence, culture and leadership.</p>
+                <div class="feature-grid">
+                  <article class="feature-card"><div class="feature-image"><img loading="lazy" src="assets/taiwan.jpg" onerror="this.onerror=null;this.src='assets/taiwan.svg';" alt="GIP Taiwan study trip" /></div><div class="feature-copy"><h4>GIP Taiwan</h4><p>Explored Taiwan’s technology and innovation ecosystem through visits and discussions involving the Taiwan Stock Exchange, ASUS, AppWorks and the TSMC. The experience reinforced how ecosystems, talent, discipline and long-term investment create sustained advantage.</p><div class="tag-row"><span class="tag">Innovation</span><span class="tag">Technology Ecosystem</span><span class="tag">Taiwan</span></div></div></article>
+                  <article class="feature-card"><div class="feature-image"><img loading="lazy" src="assets/berlin.jpg" onerror="this.onerror=null;this.src='assets/berlin.svg';" alt="GNAM Berlin study trip" /></div><div class="feature-copy"><h4>GNAM ESMT Berlin</h4><p>Learned with a global cohort through the theme of Persuasion, Power &amp; Politics. The programme deepened my understanding of influence, stakeholder dynamics and leadership in complex organisational environments.</p><div class="tag-row"><span class="tag">Influence</span><span class="tag">Leadership</span><span class="tag">Berlin</span></div></div></article>
+                </div>
+              </section>
+              <section class="subpanel" id="mba-beyond" hidden>
+                <h3>Beyond the classroom.</h3>
+                <p class="lead">Some of the most meaningful MBA learning comes through people, reflection, facilitation and contributing to the wider student community.</p>
+                <div class="pillars">
+                  <div class="pillar"><span>FACILITATION</span><h4>Assistant Facilitator</h4><p>Returning to support a new MBA cohort creates an opportunity to move from participant to facilitator.</p></div>
+                  <div class="pillar"><span>COLLABORATION</span><h4>Diverse cohorts</h4><p>Learning alongside peers from different industries, cultures and professional perspectives.</p></div>
+                  <div class="pillar"><span>APPLICATION</span><h4>Business projects</h4><p>Turning classroom concepts into practical analysis, decisions and recommendations.</p></div>
+                </div>
+              </section>
+            </div>
           </div>
+        </article>
+
+        <!-- COMMUNITY -->
+        <article class="chapter-panel" id="panel-community" role="tabpanel" aria-labelledby="tab-community" hidden>
+          <div class="chapter-layout">
+            <aside class="chapter-sidebar">
+              <h3 class="sidebar-heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2.5"/><path d="M2 20c.5-4 2.7-6 6-6s5.5 2 6 6M14 13c3.7 0 6 2 6.5 6"/></svg>Beyond Work</h3>
+              <div class="subnav" role="tablist" aria-label="Community details">
+                <button class="subnav-button" role="tab" aria-selected="true" data-subtarget="community-overview">Overview</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="community-stories">Volunteering Stories</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="community-learning">What I Gain</button>
+              </div>
+            </aside>
+            <div class="chapter-main">
+              <section class="subpanel" id="community-overview">
+                <h3>Leadership through service.</h3>
+                <p class="lead">Volunteering keeps me connected to the community and reminds me that leadership is also about being present, dependable and willing to contribute beyond oneself.</p>
+                <div class="pillars">
+                  <div class="pillar"><span>SERVICE</span><h4>Contribute meaningfully</h4><p>Support initiatives that bring people together and create positive shared experiences.</p></div>
+                  <div class="pillar"><span>TEAMWORK</span><h4>Deliver together</h4><p>Work with diverse volunteers in environments where coordination and reliability matter.</p></div>
+                  <div class="pillar"><span>BELONGING</span><h4>Connect with community</h4><p>Build a deeper appreciation for Singapore and the people who make it home.</p></div>
+                </div>
+              </section>
+              <section class="subpanel" id="community-stories" hidden>
+                <h3>Selected volunteering stories.</h3>
+                <p class="lead">To be built</p>
+                <div class="story-stack">
+                  <article class="story-card"><div class="story-image"><img loading="lazy" src="assets/ndp.jpg" onerror="this.onerror=null;this.src='assets/ndp.svg';" alt="National Day Parade volunteering" /></div><div class="story-copy"><h4>National Day Parade Air Safety Team</h4><p>Supporting a national-scale celebration where safety, preparation and teamwork are essential.</p><div class="story-points"><div class="story-point"><strong>Purpose</strong><span>Help create a safe and well-coordinated experience</span></div><div class="story-point"><strong>Contribution</strong><span>tbc</span></div><div class="story-point"><strong>Learning</strong><span>Operational discipline, public service and teamwork across a diverse volunteer group.</span></div></div></div></article>
+                  <article class="story-card"><div class="story-image"><img loading="lazy" src="assets/aquatics.jpg" onerror="this.onerror=null;this.src='assets/aquatics.svg';" alt="World Aquatics Championships volunteering" /></div><div class="story-copy"><h4>World Aquatics Championships</h4><p>Contributing to an international sporting event hosted in Singapore.</p><div class="story-points"><div class="story-point"><strong>Purpose</strong><span>Support a welcoming and professionally managed experience for visitors and atheletes</span></div><div class="story-point"><strong>Contribution</strong><span>tbc</span></div><div class="story-point"><strong>Learning</strong><span>Service under pressure, international exposure and the importance of small operational details.</span></div></div></div></article>
+                  <article class="story-card"><div class="story-image"><img loading="lazy" src="assets/community.jpg" onerror="this.onerror=null;this.src='assets/community.svg';" alt="Community volunteering initiatives" /></div><div class="story-copy"><h4>Community &amp; Family Initiatives</h4><p>Supporting community celebrations, Families for Life programmes and cultural events.</p><div class="story-points"><div class="story-point"><strong>Purpose</strong><span>Create inclusive moments that strengthen family and community connections.</span></div><div class="story-point"><strong>Contribution</strong><span>tbc</span></div><div class="story-point"><strong>Learning</strong><span>Empathy, patience and a deeper understanding of leadership through service.</span></div></div></div></article>
+                </div>
+              </section>
+              <section class="subpanel" id="community-learning" hidden>
+                <h3>What volunteering gives me.</h3>
+                <p class="lead">The impact is not only in the hours contributed. These experiences shape how I listen, collaborate and lead.</p>
+                <div class="interest-grid">
+                  <div class="interest-card"><h4>Perspective</h4><p>A reminder that meaningful contribution takes many forms beyond professional achievement.</p></div>
+                  <div class="interest-card"><h4>Connection</h4><p>Opportunities to meet people from different communities, backgrounds and life experiences.</p></div>
+                  <div class="interest-card"><h4>Humility</h4><p>A chance to serve, learn and contribute without title or hierarchy.</p></div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </article>
+
+        <!-- INSPIRATION -->
+        <article class="chapter-panel" id="panel-inspiration" role="tabpanel" aria-labelledby="tab-inspiration" hidden>
+          <div class="chapter-layout">
+            <aside class="chapter-sidebar">
+              <h3 class="sidebar-heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 22h4M8.5 14.5A7 7 0 1 1 16 14c-1 .8-1.5 1.7-1.5 3h-5c0-1.1-.4-1.8-1-2.5Z"/></svg>Areas That Inspire Me</h3>
+              <div class="subnav" role="tablist" aria-label="Interest details">
+                <button class="subnav-button" role="tab" aria-selected="true" data-subtarget="inspiration-topics">Current Interests</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="inspiration-thinking">How I Think About Them</button>
+              </div>
+            </aside>
+            <div class="chapter-main">
+              <section class="subpanel" id="inspiration-topics">
+                <h3>Ideas shaping what comes next.</h3>
+                <p class="lead">I am drawn to areas where technology, commercial value and responsible impact come together.</p>
+                <div class="interest-grid">
+                  <div class="interest-card"><h4>Artificial Intelligence</h4><p>Practical use cases that improve decisions, productivity and customer or employee experiences.</p></div>
+                  <div class="interest-card"><h4>Responsible Innovation</h4><p>Scaling new capabilities while preserving accountability, fairness and human judgement.</p></div>
+                  <div class="interest-card"><h4>Sustainability</h4><p>Connecting environmental and social priorities with practical business transformation.</p></div>
+                  <div class="interest-card"><h4>Digital Commerce</h4><p>Designing connected journeys across platforms, operations and customer touchpoints.</p></div>
+                  <div class="interest-card"><h4>Supply Chain Technology</h4><p>Creating visibility, resilience and better orchestration across complex fulfilment networks.</p></div>
+                  <div class="interest-card"><h4>Leadership Development</h4><p>Helping people and teams build confidence, clarity and capability through change.</p></div>
+                </div>
+              </section>
+              <section class="subpanel" id="inspiration-thinking" hidden>
+                <h3>From curiosity to application.</h3>
+                <p class="lead">I prefer to explore new ideas through a combination of structured learning, practical experimentation and reflection.</p>
+                <div class="pillars"><div class="pillar"><span>LEARN</span><h4>Understand the fundamentals</h4><p>Build enough depth to separate useful opportunities from fashionable noise.</p></div><div class="pillar"><span>TEST</span><h4>Apply in context</h4><p>Experiment with real problems, constraints and stakeholder needs.</p></div><div class="pillar"><span>REFLECT</span><h4>Consider the wider impact</h4><p>Ask what creates value, who is affected and what responsible adoption requires.</p></div></div>
+              </section>
+            </div>
+          </div>
+        </article>
+
+        <!-- LEADERSHIP -->
+        <article class="chapter-panel" id="panel-leadership" role="tabpanel" aria-labelledby="tab-leadership" hidden>
+          <div class="chapter-layout">
+            <aside class="chapter-sidebar">
+              <h3 class="sidebar-heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 5-5 2.2 2.2-5 5-2.2Z"/></svg>My Leadership Philosophy</h3>
+              <div class="subnav" role="tablist" aria-label="Leadership details">
+                <button class="subnav-button" role="tab" aria-selected="true" data-subtarget="leadership-belief">Core Belief</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="leadership-principles">Principles</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="leadership-practice">In Practice</button>
+              </div>
+            </aside>
+            <div class="chapter-main">
+              <section class="subpanel" id="leadership-belief">
+                <div class="philosophy-hero"><blockquote>“Do the right thing, the right way.”</blockquote><p>For me, effective leadership is not only about achieving the outcome. It is also about how decisions are made, how people are treated and whether trust is strengthened along the way.</p></div>
+              </section>
+              <section class="subpanel" id="leadership-principles" hidden>
+                <h3>Three principles.</h3>
+                <p class="lead">These principles guide how I approach teams, decisions and difficult situations.</p>
+                <div class="pillars"><div class="pillar"><span>CLARITY</span><h4>Make direction understandable</h4><p>Explain the purpose, choices, expectations and next steps clearly.</p></div><div class="pillar"><span>TRUST</span><h4>Create space for honesty</h4><p>Encourage people to speak openly, challenge constructively and ask for help.</p></div><div class="pillar"><span>ACCOUNTABILITY</span><h4>Own the outcome and the method</h4><p>Take responsibility for both what is delivered and how it is achieved.</p></div></div>
+              </section>
+              <section class="subpanel" id="leadership-practice" hidden>
+                <h3>How it shows up in practice.</h3>
+                <p class="lead">Leadership becomes credible through consistent behaviour, especially when there is pressure or uncertainty.</p>
+                <div class="interest-grid"><div class="interest-card"><h4>In complex programs</h4><p>Create transparency, simplify decisions and help teams focus on what matters most.</p></div><div class="interest-card"><h4>With stakeholders</h4><p>Listen for the underlying need, communicate trade-offs and maintain long-term trust.</p></div><div class="interest-card"><h4>With teams</h4><p>Provide structure and support while giving people ownership and room to grow.</p></div></div>
+              </section>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell scope-section reveal" id="scope" aria-labelledby="scope-heading">
+      <div class="scope-card">
+        <div class="scope-copy">
+          <span class="eyebrow">My Regional Footprint</span>
+          <h2 id="scope-heading">Working across Asia-Pacific</h2>
+          <p>Collaborating with diverse teams and partners across markets to deliver meaningful impact.</p>
+          <button class="btn btn-primary btn-small" id="globe-toggle" type="button" aria-controls="globe-live" aria-expanded="false">Explore interactive globe</button>
+        </div>
+        <div class="globe-card" id="globe-card">
+          <div class="globe-preview" id="globe-preview"><img src="assets/globe-preview.svg" alt="Preview of Ram's Asia-Pacific regional footprint" /></div>
+          <div class="globe-live" id="globe-live" aria-hidden="true">
+            <div id="globeViz" aria-label="Interactive globe showing Ram's regional footprint"></div>
+            <div class="globe-status" aria-live="polite"><div><strong id="globe-selected-title">Singapore</strong><span id="globe-selected-copy">Home</span></div><span>Drag to rotate · Select a marker</span></div>
+          </div>
+          <div class="globe-loader" id="globe-loader"><div>Loading interactive globe…</div></div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="site-shell footer-row">
-      <span>© <span id="current-year"></span> Ram. All rights reserved.</span>
-      <span>Technology · Strategy · Impact</span>
+  <footer class="contact-section" id="contact">
+    <div class="shell">
+      <div class="contact-grid">
+        <div class="contact-copy"><h2>Let’s connect.</h2><p>I’m always open to meaningful conversations about leadership, technology, innovation and creating impact.</p></div>
+        <div class="contact-actions">
+          <a class="contact-link" href="https://linkedin.com/in/ramachandran-venkatesh/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5H3.2V19h3.3V8.5ZM4.85 3.4A1.9 1.9 0 1 0 4.85 7.2a1.9 1.9 0 0 0 0-3.8ZM20.8 13c0-3.2-1.7-4.7-4-4.7-1.8 0-2.7 1-3.1 1.7V8.5h-3.3V19h3.3v-5.2c0-1.4.3-2.7 2-2.7 1.7 0 1.8 1.6 1.8 2.8V19h3.3v-6Z"/></svg>LinkedIn</a>
+          <a class="contact-link" href="https://github.com/Ram-Forge" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C15 4.5 16 4.8 16 4.8c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2V22c0 .3.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg>GitHub</a>
+          <!-- EDIT: Replace YOUR-EMAIL@example.com with your public contact email. -->
+          <a class="contact-link" href="mailto:YOUR-EMAIL@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>Email Me</a>
+        </div>
+      </div>
+      <div class="footer-row"><span>© <span id="current-year"></span> Ram. All rights reserved.</span><span>Built with curiosity, one line at a time.</span></div>
     </div>
   </footer>
 
   <script>
-    /* -----------------------------------------------------------------------
-       PROFILE CARDS
-       Desktop/tablet: one shared content panel below all cards.
-       Mobile: the content panel moves directly below the card that was tapped.
-    ------------------------------------------------------------------------ */
-    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-    const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
-    const tabGrid = document.querySelector('.tab-grid');
-    const contentPanel = document.querySelector('.content-panel');
-    const mobileLayout = window.matchMedia('(max-width: 760px)');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    function positionContentPanel(activeTab) {
-      if (mobileLayout.matches) {
-        activeTab.insertAdjacentElement('afterend', contentPanel);
-      } else {
-        tabGrid.insertAdjacentElement('afterend', contentPanel);
+    // Mobile navigation
+    const menuButton = document.getElementById('menu-button');
+    const primaryNav = document.getElementById('primary-nav');
+    menuButton.addEventListener('click', () => {
+      const open = primaryNav.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    primaryNav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        primaryNav.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded', 'false');
       }
+    });
+
+    // Main profile chapters; on phones the panel moves directly below the selected card.
+    const chapterTabs = Array.from(document.querySelectorAll('.chapter-card'));
+    const chapterPanels = Array.from(document.querySelectorAll('.chapter-panel'));
+    const chapterGrid = document.getElementById('chapter-grid');
+    const chapterPanelWrap = document.getElementById('chapter-panel-wrap');
+    const mobileChapterLayout = window.matchMedia('(max-width: 780px)');
+
+    function positionChapterPanel(activeTab) {
+      if (mobileChapterLayout.matches) activeTab.insertAdjacentElement('afterend', chapterPanelWrap);
+      else chapterGrid.insertAdjacentElement('afterend', chapterPanelWrap);
     }
 
-    function activateTab(tab, moveFocus = true) {
-      tabs.forEach((item) => {
-        const isActive = item === tab;
-        item.setAttribute('aria-selected', String(isActive));
-        item.tabIndex = isActive ? 0 : -1;
+    function activateChapter(tab, shouldFocus = false) {
+      chapterTabs.forEach((item) => {
+        const active = item === tab;
+        item.setAttribute('aria-selected', String(active));
+        item.tabIndex = active ? 0 : -1;
       });
-
-      panels.forEach((panel) => {
-        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
-      });
-
-      positionContentPanel(tab);
-
-      if (moveFocus) {
-        tab.focus();
-      }
+      chapterPanels.forEach((panel) => { panel.hidden = panel.id !== tab.getAttribute('aria-controls'); });
+      positionChapterPanel(tab);
+      if (shouldFocus) tab.focus({ preventScroll: true });
     }
 
-    tabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => activateTab(tab, false));
-
+    chapterTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateChapter(tab));
       tab.addEventListener('keydown', (event) => {
-        let targetIndex = null;
-
-        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-          targetIndex = (index + 1) % tabs.length;
-        }
-
-        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-          targetIndex = (index - 1 + tabs.length) % tabs.length;
-        }
-
-        if (event.key === 'Home') {
-          targetIndex = 0;
-        }
-
-        if (event.key === 'End') {
-          targetIndex = tabs.length - 1;
-        }
-
-        if (targetIndex !== null) {
-          event.preventDefault();
-          activateTab(tabs[targetIndex]);
-        }
+        let target = null;
+        if (event.key === 'ArrowRight' || event.key === 'ArrowDown') target = (index + 1) % chapterTabs.length;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') target = (index - 1 + chapterTabs.length) % chapterTabs.length;
+        if (event.key === 'Home') target = 0;
+        if (event.key === 'End') target = chapterTabs.length - 1;
+        if (target !== null) { event.preventDefault(); activateChapter(chapterTabs[target], true); }
       });
     });
 
-    function repositionProfilePanel() {
-      const activeTab = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || tabs[0];
-      positionContentPanel(activeTab);
-    }
+    document.querySelectorAll('[data-open-chapter]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const tab = chapterTabs.find((item) => item.dataset.chapter === link.dataset.openChapter);
+        if (tab) activateChapter(tab);
+      });
+    });
 
-    if (typeof mobileLayout.addEventListener === 'function') {
-      mobileLayout.addEventListener('change', repositionProfilePanel);
+    mobileChapterLayout.addEventListener('change', () => {
+      const active = chapterTabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || chapterTabs[0];
+      positionChapterPanel(active);
+    });
+    positionChapterPanel(document.getElementById('tab-mba'));
+
+    // Nested navigation within every chapter.
+    document.querySelectorAll('.chapter-panel').forEach((panel) => {
+      const buttons = Array.from(panel.querySelectorAll('.subnav-button'));
+      const subpanels = Array.from(panel.querySelectorAll('.subpanel'));
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          buttons.forEach((item) => item.setAttribute('aria-selected', String(item === button)));
+          subpanels.forEach((item) => { item.hidden = item.id !== button.dataset.subtarget; });
+        });
+      });
+    });
+
+    // Gentle scroll reveal.
+    if ('IntersectionObserver' in window && !reducedMotion) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach((item) => revealObserver.observe(item));
     } else {
-      mobileLayout.addListener(repositionProfilePanel);
+      document.querySelectorAll('.reveal').forEach((item) => item.classList.add('is-visible'));
     }
-    repositionProfilePanel();
 
-    /* -----------------------------------------------------------------------
-       INTERACTIVE REGIONAL GLOBE
-       Scope countries are highlighted as clickable land areas. Chennai,
-       Shanghai and Singapore use larger, accessible city markers.
-    ------------------------------------------------------------------------ */
-    const scopeCountryIds = new Set([
-      '704', '764', '458', '702', '360', '608', '036', '554', '410', '392'
-    ]);
+    // Interactive globe: heavy libraries and country data load only when the visitor requests them.
+    const globeToggle = document.getElementById('globe-toggle');
+    const globePreview = document.getElementById('globe-preview');
+    const globeLive = document.getElementById('globe-live');
+    const globeLoader = document.getElementById('globe-loader');
+    const globeCard = document.getElementById('globe-card');
+    const selectedTitle = document.getElementById('globe-selected-title');
+    const selectedCopy = document.getElementById('globe-selected-copy');
+    let globe = null;
+    let globeReady = false;
+    let liveVisible = false;
 
+    const scopeIds = new Set(['704','764','458','702','360','608','036','554','410','392']);
+    const countryDetails = {
+      '704': ['Vietnam','Current regional scope'], '764': ['Thailand','Current regional scope'],
+      '458': ['Malaysia','Current regional scope'], '702': ['Singapore','Home and current base'],
+      '360': ['Indonesia','Current regional scope'], '608': ['Philippines','Current regional scope'],
+      '036': ['Australia','Current regional scope'], '554': ['New Zealand','Current regional scope'],
+      '410': ['South Korea','Current regional scope'], '392': ['Japan','Current regional scope']
+    };
     const cityMarkers = [
-      {
-        name: 'Singapore',
-        slug: 'singapore',
-        lat: 1.3521,
-        lng: 103.8198,
-        label: 'Home',
-        description: 'Home'
-      },
-      {
-        name: 'Chennai',
-        slug: 'chennai',
-        lat: 13.0827,
-        lng: 80.2707,
-        label: 'Hometown',
-        description: 'Hometown'
-      },
-      {
-        name: 'Shanghai',
-        slug: 'shanghai',
-        lat: 31.2304,
-        lng: 121.4737,
-        label: 'Home for 6 years',
-        description: 'Home for 6 years'
-      }
+      { name: 'Singapore', note: 'Home', lat: 1.3521, lng: 103.8198, color: '#e5484d' },
+      { name: 'Chennai', note: 'Hometown', lat: 13.0827, lng: 80.2707, color: '#e8933a' },
+      { name: 'Shanghai', note: 'Home for 6 years', lat: 31.2304, lng: 121.4737, color: '#3ba66b' }
     ];
 
-    const countryNameById = {
-      '704': 'Vietnam',
-      '764': 'Thailand',
-      '458': 'Malaysia',
-      '702': 'Singapore',
-      '360': 'Indonesia',
-      '608': 'Philippines',
-      '036': 'Australia',
-      '554': 'New Zealand',
-      '410': 'South Korea',
-      '392': 'Japan'
-    };
+    const normaliseId = (value) => String(value).padStart(3, '0');
+    const setGlobeInfo = (name, note) => { selectedTitle.textContent = name; selectedCopy.textContent = note; };
 
-    const countriesTopoJsonUrl =
-      'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/countries-50m.json';
-
-    let globeInstance = null;
-    let globeHasLoaded = false;
-    let rotationResumeTimer = null;
-
-    const globeStage = document.getElementById('globe-stage');
-    const globeElement = document.getElementById('globeViz');
-    const globePreview = document.getElementById('globe-preview');
-    const loadGlobeButton = document.getElementById('load-globe-button');
-    const globeLoader = document.getElementById('globe-loader');
-    const globeFallback = document.getElementById('globe-fallback');
-    const globeInfo = document.getElementById('globe-info');
-    const globeInfoLabel = document.getElementById('globe-info-label');
-    const globeInfoName = document.getElementById('globe-info-name');
-    const globeInfoDescription = document.getElementById('globe-info-description');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function countryId(feature) {
-      const rawId = feature?.id ?? '';
-      return String(rawId).padStart(3, '0');
-    }
-
-    function isScopeCountry(feature) {
-      return scopeCountryIds.has(countryId(feature));
-    }
-
-    function showGlobeInfo({ label, name, description }) {
-      globeInfoLabel.textContent = label;
-      globeInfoName.textContent = name;
-      globeInfoDescription.textContent = description;
-      globeInfo.classList.add('is-visible');
-    }
-
-    function showCityInfo(city) {
-      showGlobeInfo({
-        label: city.label,
-        name: city.name,
-        description: city.description
-      });
-    }
-
-    function showCountryInfo(feature) {
-      const id = countryId(feature);
-
-      if (!scopeCountryIds.has(id)) {
-        return;
-      }
-
-      if (id === '702') {
-        showCityInfo(cityMarkers[0]);
-        return;
-      }
-
-      showGlobeInfo({
-        label: 'Current regional scope',
-        name: countryNameById[id] || feature.properties?.name || 'Selected market',
-        description: 'Part of my current Asia-Pacific scope'
-      });
-    }
-
-    function pauseAndResumeRotation() {
-      if (!globeInstance || reducedMotion) {
-        return;
-      }
-
-      const controls = globeInstance.controls();
-      controls.autoRotate = false;
-      window.clearTimeout(rotationResumeTimer);
-      rotationResumeTimer = window.setTimeout(() => {
-        controls.autoRotate = true;
-      }, 6000);
-    }
-
-    function focusLocation(location) {
-      if (!globeInstance) {
-        return;
-      }
-
-      globeInstance.pointOfView(
-        { lat: location.lat, lng: location.lng, altitude: 1.7 },
-        reducedMotion ? 0 : 800
-      );
-      pauseAndResumeRotation();
-    }
-
-    function createCityMarker(city) {
-      const marker = document.createElement('button');
-      marker.type = 'button';
-      marker.className = `globe-marker globe-marker--${city.slug}`;
-      marker.setAttribute('aria-label', `${city.name}: ${city.description}`);
-      marker.title = `${city.name} — ${city.description}`;
-      marker.innerHTML = `
-        <span class="globe-marker-core" aria-hidden="true"></span>
-        <span>${city.name}</span>
-      `;
-
-      marker.addEventListener('click', (event) => {
-        event.stopPropagation();
-        showCityInfo(city);
-        focusLocation(city);
-      });
-
-      return marker;
-    }
-
-    function sizeGlobe() {
-      if (!globeInstance) {
-        return;
-      }
-
-      globeInstance.width(globeStage.clientWidth).height(globeStage.clientHeight);
-    }
-
-    function showGlobeFallback() {
-      globeStage.classList.remove('is-loading', 'is-ready');
-      globeStage.classList.add('has-error');
-      globeLoader.style.display = 'none';
-      globeFallback.style.display = 'grid';
-    }
-
-    async function addCountryPolygons() {
-      try {
-        if (!window.topojson) {
-          throw new Error('TopoJSON conversion library is unavailable.');
-        }
-
-        const response = await fetch(countriesTopoJsonUrl, { mode: 'cors' });
-        if (!response.ok) {
-          throw new Error(`Country map request failed with status ${response.status}`);
-        }
-
-        const world = await response.json();
-        const countries = window.topojson.feature(world, world.objects.countries);
-        globeInstance.polygonsData(countries.features || []);
-      } catch (error) {
-        console.warn('Country boundaries could not be loaded.', error);
-      }
-    }
-
-    function initialiseGlobe() {
-      if (globeHasLoaded || !window.Globe) {
-        if (!window.Globe) {
-          showGlobeFallback();
-        }
-        return;
-      }
-
-      globeHasLoaded = true;
-
-      try {
-        globeInstance = new Globe(globeElement, {
-          rendererConfig: { antialias: true, alpha: true },
-          waitForGlobeReady: true,
-          animateIn: !reducedMotion
-        })
-          .width(globeStage.clientWidth)
-          .height(globeStage.clientHeight)
-          .backgroundColor('rgba(0,0,0,0)')
-          .showAtmosphere(true)
-          .atmosphereColor('#8bd7f5')
-          .atmosphereAltitude(0.13)
-          .showGraticules(false)
-          .polygonsData([])
-          .polygonAltitude((feature) => {
-            const id = countryId(feature);
-            if (id === '702') return 0.055;
-            return scopeCountryIds.has(id) ? 0.035 : 0.009;
-          })
-          .polygonCapColor((feature) => {
-            const id = countryId(feature);
-            if (id === '702') return '#ef3340';
-            return scopeCountryIds.has(id) ? '#36a7a0' : '#dce8e8';
-          })
-          .polygonSideColor((feature) => {
-            const id = countryId(feature);
-            if (id === '702') return 'rgba(171, 21, 39, 0.88)';
-            return scopeCountryIds.has(id)
-              ? 'rgba(25, 119, 116, 0.72)'
-              : 'rgba(139, 166, 170, 0.42)';
-          })
-          .polygonStrokeColor((feature) =>
-            isScopeCountry(feature) ? 'rgba(255,255,255,0.9)' : 'rgba(255,255,255,0.58)'
-          )
-          .polygonLabel((feature) => {
-            const id = countryId(feature);
-            if (!scopeCountryIds.has(id)) return '';
-            const name = countryNameById[id] || feature.properties?.name || '';
-            const subtitle = id === '702' ? 'Home' : 'Current regional scope';
-            return `
-              <div style="padding:8px 10px;border:1px solid rgba(20,84,107,.14);border-radius:10px;background:rgba(255,255,255,.96);color:#101d33;font:800 12px/1.3 Inter,Segoe UI,sans-serif;box-shadow:0 10px 26px rgba(15,55,78,.18)">
-                ${name}<br><span style="color:#2a839f;font-weight:650">${subtitle}</span>
-              </div>
-            `;
-          })
-          .onPolygonClick((feature) => {
-            if (isScopeCountry(feature)) {
-              showCountryInfo(feature);
-              pauseAndResumeRotation();
-            }
-          })
-          .htmlElementsData(cityMarkers)
-          .htmlLat('lat')
-          .htmlLng('lng')
-          .htmlAltitude(0.075)
-          .htmlElement(createCityMarker)
-          .htmlTransitionDuration(reducedMotion ? 0 : 220)
-          .onGlobeReady(() => {
-            globeStage.classList.remove('is-loading', 'has-error');
-            globeStage.classList.add('is-ready');
-            globeLoader.style.display = 'none';
-            const canvas = globeElement.querySelector('canvas');
-            if (canvas) {
-              canvas.setAttribute('role', 'img');
-              canvas.setAttribute(
-                'aria-label',
-                'Rotating globe highlighting ten current Asia-Pacific markets and the cities Chennai, Shanghai and Singapore'
-              );
-              canvas.tabIndex = 0;
-            }
-          });
-
-        const material = globeInstance.globeMaterial();
-        if (material?.color?.set) material.color.set('#4caee2');
-        if (material?.emissive?.set) material.emissive.set('#0d527b');
-        if ('emissiveIntensity' in material) material.emissiveIntensity = 0.17;
-        if ('shininess' in material) material.shininess = 22;
-
-        const controls = globeInstance.controls();
-        controls.autoRotate = !reducedMotion;
-        controls.autoRotateSpeed = 0.3;
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.08;
-        controls.enablePan = false;
-        controls.minDistance = 170;
-        controls.maxDistance = 430;
-
-        globeInstance.pointOfView({ lat: 8, lng: 112, altitude: 1.72 }, 0);
-
-        ['pointerdown', 'touchstart', 'wheel'].forEach((eventName) => {
-          globeElement.addEventListener(eventName, pauseAndResumeRotation, { passive: true });
-        });
-
-        if ('ResizeObserver' in window) {
-          const resizeObserver = new ResizeObserver(sizeGlobe);
-          resizeObserver.observe(globeStage);
-        } else {
-          window.addEventListener('resize', sizeGlobe);
-        }
-
-        addCountryPolygons();
-      } catch (error) {
-        console.error('The regional globe could not be initialised.', error);
-        showGlobeFallback();
-      }
-    }
-
-    function loadExternalScript(src, isReady) {
-      if (isReady()) {
-        return Promise.resolve();
-      }
-
+    function loadScript(src) {
       return new Promise((resolve, reject) => {
         const existing = document.querySelector(`script[src="${src}"]`);
-        if (existing) {
-          existing.addEventListener('load', resolve, { once: true });
-          existing.addEventListener('error', reject, { once: true });
-          return;
-        }
-
+        if (existing) { if (existing.dataset.loaded === 'true') resolve(); else existing.addEventListener('load', resolve, { once: true }); return; }
         const script = document.createElement('script');
-        script.src = src;
-        script.async = true;
-        script.onload = resolve;
-        script.onerror = reject;
+        script.src = src; script.async = true;
+        script.addEventListener('load', () => { script.dataset.loaded = 'true'; resolve(); }, { once: true });
+        script.addEventListener('error', reject, { once: true });
         document.head.appendChild(script);
       });
     }
 
-    async function loadGlobeLibrary() {
-      const globeScript =
-        'https://cdn.jsdelivr.net/npm/globe.gl@2.46.1/dist/globe.gl.min.js';
-      const topoJsonScript =
-        'https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js';
-
-      const [globeResult] = await Promise.allSettled([
-        loadExternalScript(globeScript, () => Boolean(window.Globe)),
-        loadExternalScript(topoJsonScript, () => Boolean(window.topojson))
-      ]);
-
-      if (globeResult.status === 'rejected' || !window.Globe) {
-        showGlobeFallback();
-        return;
+    async function initialiseGlobe() {
+      if (globeReady) return;
+      globeLoader.style.display = 'grid';
+      try {
+        await loadScript('https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js');
+        await loadScript('https://cdn.jsdelivr.net/npm/globe.gl');
+        const world = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then((response) => {
+          if (!response.ok) throw new Error('Country data unavailable');
+          return response.json();
+        });
+        const countries = window.topojson.feature(world, world.objects.countries).features;
+        const host = document.getElementById('globeViz');
+        globe = new Globe(host, { rendererConfig: { antialias: true, alpha: true }, animateIn: !reducedMotion })
+          .width(globeCard.clientWidth)
+          .height(globeCard.clientHeight)
+          .backgroundColor('rgba(0,0,0,0)')
+          .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+          .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+          .showAtmosphere(true)
+          .atmosphereColor('#81c8e7')
+          .atmosphereAltitude(.13)
+          .polygonsData(countries)
+          .polygonAltitude((feature) => scopeIds.has(normaliseId(feature.id)) ? .018 : .004)
+          .polygonCapColor((feature) => scopeIds.has(normaliseId(feature.id)) ? 'rgba(31,157,139,.78)' : 'rgba(238,236,228,.18)')
+          .polygonSideColor((feature) => scopeIds.has(normaliseId(feature.id)) ? 'rgba(31,157,139,.35)' : 'rgba(255,255,255,.03)')
+          .polygonStrokeColor(() => 'rgba(255,255,255,.35)')
+          .polygonLabel((feature) => {
+            const detail = countryDetails[normaliseId(feature.id)];
+            return detail ? `<div style="padding:7px 9px;border-radius:8px;background:rgba(255,255,255,.95);color:#10213a;font:700 12px/1.3 Inter,Segoe UI,sans-serif;box-shadow:0 8px 22px rgba(16,33,58,.2)">${detail[0]}<br><span style="color:#657080;font-weight:600">${detail[1]}</span></div>` : '';
+          })
+          .onPolygonClick((feature) => {
+            const detail = countryDetails[normaliseId(feature.id)];
+            if (detail) setGlobeInfo(detail[0], detail[1]);
+          })
+          .htmlElementsData(cityMarkers)
+          .htmlLat('lat').htmlLng('lng').htmlAltitude(.035)
+          .htmlElement((item) => {
+            const marker = document.createElement('button');
+            marker.type = 'button'; marker.className = 'map-marker';
+            marker.style.setProperty('--marker', item.color);
+            marker.textContent = item.name;
+            marker.title = `${item.name}: ${item.note}`;
+            marker.addEventListener('click', (event) => { event.stopPropagation(); setGlobeInfo(item.name, item.note); });
+            return marker;
+          });
+        const controls = globe.controls();
+        controls.autoRotate = !reducedMotion;
+        controls.autoRotateSpeed = .28;
+        controls.enablePan = false;
+        controls.enableDamping = true;
+        controls.dampingFactor = .08;
+        globe.pointOfView({ lat: 7, lng: 111, altitude: 1.72 }, 0);
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(() => { if (globe) globe.width(globeCard.clientWidth).height(globeCard.clientHeight); }).observe(globeCard);
+        }
+        globeReady = true;
+      } catch (error) {
+        console.error('Interactive globe failed to load:', error);
+        globeLive.innerHTML = '<div style="display:grid;place-items:center;height:100%;padding:30px;text-align:center;color:#626b7a">The interactive globe could not load. The lightweight regional preview remains available.</div>';
+      } finally {
+        globeLoader.style.display = 'none';
       }
-
-      initialiseGlobe();
     }
 
-    loadGlobeButton.addEventListener('click', () => {
-      if (globeHasLoaded || globeStage.classList.contains('is-loading')) {
-        return;
+    globeToggle.addEventListener('click', async () => {
+      liveVisible = !liveVisible;
+      globeToggle.setAttribute('aria-expanded', String(liveVisible));
+      if (liveVisible) {
+        globePreview.style.display = 'none';
+        globeLive.style.display = 'block';
+        globeLive.setAttribute('aria-hidden', 'false');
+        globeToggle.textContent = 'Show lightweight preview';
+        await initialiseGlobe();
+      } else {
+        globePreview.style.display = 'block';
+        globeLive.style.display = 'none';
+        globeLive.setAttribute('aria-hidden', 'true');
+        globeToggle.textContent = 'Explore interactive globe';
       }
-
-      globeStage.classList.remove('has-error');
-      globeStage.classList.add('is-loading');
-      loadGlobeButton.disabled = true;
-      loadGlobeLibrary();
     });
 
     document.getElementById('current-year').textContent = new Date().getFullYear();
