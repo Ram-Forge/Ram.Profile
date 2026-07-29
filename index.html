@@ -297,8 +297,17 @@
       line-height: 1.05;
       letter-spacing: -.045em;
     }
-    .section-title::after { display: block; width: 42px; height: 2px; margin: 16px auto 0; background: var(--gold); content: ""; }
-    .chapter-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; margin-top: 31px; }
+    .section-title::after { 
+      .section-intro {
+  max-width: 680px;
+  margin: 18px auto 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+      }
+      display: block; width: 42px; height: 2px; margin: 16px auto 0; background: var(--gold); content: ""; }
+    .chapter-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; margin-top: 24px; }
     .chapter-card {
       position: relative;
       min-height: 190px;
@@ -655,7 +664,9 @@
       <div class="section-title">
         <h2 id="chapters-heading">Experience, Learning and Values</h2>
       </div>
-
+         <p class="section-intro">
+          Select a card to learn more about my work, learning, interests and values.
+        </p>
       <div class="chapter-grid" id="chapter-grid" role="tablist" aria-label="Profile chapters">
         <button class="chapter-card" id="tab-work" type="button" role="tab" aria-selected="false" aria-controls="panel-work" tabindex="-1" data-chapter="work">
           <span class="card-top">
