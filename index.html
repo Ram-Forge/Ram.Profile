@@ -636,7 +636,7 @@
 
       <div class="hero-visual" aria-label="Professional portrait area">
         <div class="portrait-wrap">
-          <!-- Upload profile.jpg beside index.html. The placeholder appears until then. -->
+          <!-- Upload profile.png beside index.html. The placeholder appears until then. -->
           <img src="profile.png" alt="Professional portrait of Ram" onerror="this.onerror=null;this.src='assets/profile-placeholder.svg';" />
         </div>
           <div class="portrait-chip">
@@ -668,7 +668,7 @@
           Select a card to learn more about my work, learning, interests and values.
         </p>
       <div class="chapter-grid" id="chapter-grid" role="tablist" aria-label="Profile chapters">
-        <button class="chapter-card" id="tab-work" type="button" role="tab" aria-selected="false" aria-controls="panel-work" tabindex="-1" data-chapter="work">
+        <button class="chapter-card" id="tab-work" type="button" role="tab" aria-selected="false" aria-controls="panel-work" tabindex="0" data-chapter="work">
           <span class="card-top">
             <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg>
             <span class="chapter-number">01</span>
@@ -677,7 +677,7 @@
           <span class="chapter-summary">Technology, products, transformation and delivering business outcomes at scale.</span>
         </button>
 
-        <button class="chapter-card" id="tab-mba" type="button" role="tab" aria-selected="true" aria-controls="panel-mba" tabindex="0" data-chapter="mba">
+        <button class="chapter-card" id="tab-mba" type="button" role="tab" aria-selected="false" aria-controls="panel-mba" hidden tabindex="-1" data-chapter="mba">
           <span class="card-top">
             <svg class="chapter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9 12 4l9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5M21 9v6"/></svg>
             <span class="chapter-number">02</span>
@@ -714,7 +714,7 @@
         </button>
       </div>
 
-      <div class="chapter-panel-wrap" id="chapter-panel-wrap">
+      <div class="chapter-panel-wrap" id="chapter-panel-wrap" hidden>
         <!-- WORK -->
         <article class="chapter-panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" hidden>
           <div class="chapter-layout">
@@ -769,19 +769,19 @@
         </article>
 
         <!-- MBA -->
-        <article class="chapter-panel" id="panel-mba" role="tabpanel" aria-labelledby="tab-mba">
+        <article class="chapter-panel" id="panel-mba" role="tabpanel" aria-labelledby="tab-mba" hidden >
           <div class="chapter-layout">
             <aside class="chapter-sidebar">
               <h3 class="sidebar-heading"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 9 12 4l9 5-9 5-9-5Z"/><path d="M7 12v5c3 2 7 2 10 0v-5M21 9v6"/></svg>My MBA Journey</h3>
               <div class="subnav" role="tablist" aria-label="MBA details">
-                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="mba-overview">Overview</button>
-                <button class="subnav-button" role="tab" aria-selected="true" data-subtarget="mba-learning">Learning Themes</button>
+                <button class="subnav-button" role="tab" aria-selected="true" data-subtarget="mba-overview">Overview</button>
+                <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="mba-learning">Learning Themes</button>
                 <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="mba-global">Global Experiences</button>
                 <button class="subnav-button" role="tab" aria-selected="false" data-subtarget="mba-beyond">Beyond the Classroom</button>
               </div>
             </aside>
             <div class="chapter-main">
-              <section class="subpanel" id="mba-overview" hidden>
+              <section class="subpanel" id="mba-overview">
                 <h3>Learning beyond technology delivery.</h3>
                 <p class="lead">The NUS MBA is helping me strengthen the connection between technology execution, business strategy, leadership and sustainable value creation.</p>
                 <div class="pillars">
@@ -790,7 +790,7 @@
                   <div class="pillar"><span>APPLICATION</span><h4>Bring learning to work</h4><p>Apply frameworks to real programs, decisions and leadership challenges.</p></div>
                 </div>
               </section>
-              <section class="subpanel" id="mba-learning">
+              <section class="subpanel" id="mba-learning" hidden>
                 <h3>Learning Themes</h3>
                 <p class="lead">The MBA is broadening my perspective beyond technology, strengthening business acumen and helping me grow as a more holistic leader.</p>
                 <!-- EDIT: Review the module names and completion status before publishing. -->
@@ -1000,13 +1000,24 @@
         item.setAttribute('aria-selected', String(active));
         item.tabIndex = active ? 0 : -1;
       });
+      chapterPanelWrap.hidden = false;
       chapterPanels.forEach((panel) => { panel.hidden = panel.id !== tab.getAttribute('aria-controls'); });
       positionChapterPanel(tab);
       if (shouldFocus) tab.focus({ preventScroll: true });
     }
 
     chapterTabs.forEach((tab, index) => {
-      tab.addEventListener('click', () => activateChapter(tab));
+      tab.addEventListener('click', () => {
+  const isAlreadyOpen =
+    tab.getAttribute('aria-selected') === 'true' &&
+    !chapterPanelWrap.hidden;
+
+  if (isAlreadyOpen) {
+    collapseChapter(tab);
+  } else {
+    activateChapter(tab);
+  }
+});
       tab.addEventListener('keydown', (event) => {
         let target = null;
         if (event.key === 'ArrowRight' || event.key === 'ArrowDown') target = (index + 1) % chapterTabs.length;
@@ -1025,10 +1036,27 @@
     });
 
     mobileChapterLayout.addEventListener('change', () => {
-      const active = chapterTabs.find((tab) => tab.getAttribute('aria-selected') === 'true') || chapterTabs[0];
-      positionChapterPanel(active);
-    });
-    positionChapterPanel(document.getElementById('tab-mba'));
+  const active = chapterTabs.find(
+    (tab) => tab.getAttribute('aria-selected') === 'true'
+  );
+
+  if (active && !chapterPanelWrap.hidden) {
+    positionChapterPanel(active);
+  }
+});
+    collapseChapter(chapterTabs[0])
+      function collapseChapter(tab) {
+  chapterTabs.forEach((item) => {
+    item.setAttribute('aria-selected', 'false');
+    item.tabIndex = item === tab ? 0 : -1;
+  });
+
+  chapterPanels.forEach((panel) => {
+    panel.hidden = true;
+  });
+
+  chapterPanelWrap.hidden = true;
+};
 
     // Nested navigation within every chapter.
     document.querySelectorAll('.chapter-panel').forEach((panel) => {
